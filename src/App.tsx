@@ -40,6 +40,7 @@ return (
           <Route exact path="/home">
             <Home />
           </Route>
+          <Redirect to="/login" />
         </Switch>
       </div>
     </Router>

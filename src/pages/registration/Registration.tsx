@@ -66,12 +66,12 @@ export default function Login() {
               autoFocus
               type="password1"
               value={password1}
-              placeholder="Your Password *"
+              placeholder="Confirm your Password *"
               onChange={(e) => setPassword1(e.target.value)}
             />
             </Col>
         </Row>
-        <Button variant="outline-primary" size="lg" type="submit" disabled={!(name.length>0 && email.length>0 && password.length>0 && password == password1)}>
+        <Button variant="outline-primary" type="submit" disabled={!(name.length>0 && email.length>0 && password.length>0 && password == password1)}>
           Registration
         </Button>
      </div>

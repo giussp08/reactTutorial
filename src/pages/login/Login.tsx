@@ -11,7 +11,6 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let history = useHistory();
-  const [show, setShow] = useState(true);
 
   function handleSubmit(event: any) {
     console.log(event);
@@ -23,7 +22,7 @@ function Login() {
       history.push("/home");
     }
     else {
-      
+      alert("Wrong Credentials");
     }
   }
 
@@ -57,7 +56,7 @@ function Login() {
           />
         </Col>
       </Row>
-      <Button variant="primary" onClick={handleLogin}>Login</Button>{" "}
+      <Button variant="primary" onClick={handleLogin} >Login</Button>{" "}
       <Button variant="link" onClick={handleClick}>Registration</Button>
     </div>
   );

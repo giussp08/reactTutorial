@@ -36,7 +36,7 @@ function Login() {
       <br></br>
       <Row>
         <Col md={{span:6 , offset:3}}>
-          <Form.Control
+          <Form.Control 
             autoFocus
             type="email"
             value={email}

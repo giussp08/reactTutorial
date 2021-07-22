@@ -16,6 +16,7 @@ import { Col, Row } from 'react-bootstrap';
 export default function Login() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState(""); 
+    const [email1, setEmail1] = useState("");
     const [password, setPassword] = useState("");
     const [password1 ,setPassword1] = useState("");
 
@@ -49,7 +50,18 @@ export default function Login() {
             />
             </Col>
         </Row> 
-        <Row >
+        <Row>
+          <Col  md={{span:6 , offset:3}}>
+        <Form.Control
+              autoFocus
+              type="email1"
+              value={email1}
+              placeholder="Confirm your Email"
+              onChange={(e) => setEmail1(e.target.value)}
+            />
+           </Col>
+        </Row> 
+        <Row style={{paddingTop:"10px", paddingBottom:"10px"}} >
           <Col  md={{span:6 , offset:3}}>
           <Form.Control
               autoFocus
@@ -60,7 +72,7 @@ export default function Login() {
             />
             </Col>
         </Row> 
-        <Row style={{paddingTop:"10px", paddingBottom:"10px"}}>
+        <Row style={{paddingBottom:"10px"}}>
           <Col  md={{span:6 , offset:3}}>
             <Form.Control
               autoFocus

@@ -1,7 +1,6 @@
-.Button {
+.button {
     background-color: #3683e7; /* Green */
     border: none;
     color: white;
+    border-radius: 12px;
   }
-
-  .button1 {border-radius: 12px;}

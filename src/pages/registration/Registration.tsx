@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import Form from "react-bootstrap/Form";
 import  Button  from 'react-bootstrap/Button';
 import './Registration.css';
-import './Button.css';
+import '../../shared/styles/Button.css';
 import { useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -11,6 +11,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { Col, Row } from 'react-bootstrap';
 
 export default function Login() {
     const [name, setName] = useState("");
@@ -18,44 +19,61 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [password1 ,setPassword1] = useState("");
 
-    function handleSubmit(event) {
+    function handleSubmit(event : any) {
+      console.log(event);
         event.preventDefault();
       }
 
     return (
      <div className="Registration">
         <Form.Label>Registration</Form.Label><br></br>
+        <Row>
+          <Col  md={{span:6 , offset:3}}>
         <Form.Control
               autoFocus
               type="name"
               value={name}
               placeholder="Your Name *"
               onChange={(e) => setName(e.target.value)}
-            /><br></br>
+            />
+           </Col>
+        </Row> 
+        <Row style={{paddingTop:"10px", paddingBottom:"10px"}}>
+          <Col  md={{span:6 , offset:3}}>
          <Form.Control
               autoFocus
               type="email"
               value={email}
               placeholder="Your Email *"
               onChange={(e) => setEmail(e.target.value)}
-            /><br></br>
+            />
+            </Col>
+        </Row> 
+        <Row >
+          <Col  md={{span:6 , offset:3}}>
           <Form.Control
               autoFocus
               type="password"
               value={password}
               placeholder="Your Password *"
               onChange={(e) => setPassword(e.target.value)}
-            /><br></br>
+            />
+            </Col>
+        </Row> 
+        <Row style={{paddingTop:"10px", paddingBottom:"10px"}}>
+          <Col  md={{span:6 , offset:3}}>
             <Form.Control
               autoFocus
               type="password1"
               value={password1}
               placeholder="Your Password *"
               onChange={(e) => setPassword1(e.target.value)}
-            /><br></br>
-        <Button className= "Button button1" block size="lg" type="submit" disabled={!(name.length>0 && email.length>0 && password.length>0 && password == password1)}>
+            />
+            </Col>
+        </Row>
+        <Button variant="outline-primary" size="lg" type="submit" disabled={!(name.length>0 && email.length>0 && password.length>0 && password == password1)}>
           Registration
-        </Button><br></br>
+        </Button>
      </div>
     );
 }

@@ -1,10 +1,16 @@
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import "./Registration.css";
 import "../../shared/styles/Button.css";
 import * as Yup from "yup";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik} from "formik";
+import { Col, Row } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
 export default function Login() {
+
+  
+  let history = useHistory();
 
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -21,137 +27,152 @@ export default function Login() {
       .required(),
   });
 
-  const initialValues = {
-    name: "",
-    email: "",
-    email1: "",
-    password: "",
-    password1: "",
-  };
-
   const onSubmit = (values: any) => {
     alert(JSON.stringify(values, null, 2));
   };
 
-  const renderError = (message: any) => <p className="help is-danger">{message}</p>;
+  const renderError = (message: any) => (
+    <p className="help is-danger">{message}</p>
+  );
 
   function handleSubmit(event: any) {
     console.log(event);
     event.preventDefault();
   }
 
+  function handleClick(){
+    history.push("/login");
+  }
+
   return (
+    <div className="Registration container">
     <Formik
-      initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={async (values, { resetForm }) => {
-        await onSubmit(values);
-        resetForm();
+      onSubmit={console.log}
+      initialValues={{
+        name: "",
+        email: "",
+        email1: "",
+        password: "",
+        password1: "",
       }}
     >
-      {(formik) => {
-        const { errors, touched, isValid, dirty } = formik;
-        return(
-        
-          <div
-            className="container"
-            style={{
-              width: "60%",
-            }}
-          >
-            <Form>
-            <div className="Registration">
-              <label className="label" htmlFor="name">
-                Full name
-              </label>
-              <div className="control">
-                <Field
-                  name="name"
-                  type="text"
-                  className={errors.name && touched.name ? "input-error" : null}
-                  placeholder="Your name *"
-                />
-                <ErrorMessage name="name" render={renderError} />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label" htmlFor="email">
-                Email address
-              </label>
-              <div className="control">
-                <Field
-                  name="email"
-                  type="text"
-                  className={
-                    errors.email && touched.email ? "input-error" : null
-                  }
-                  placeholder="Your Email *"
-                />
-                <ErrorMessage name="email" render={renderError} />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label" htmlFor="email1">
-                Email address
-              </label>
-              <div className="control">
-                <Field
-                  name="email1"
-                  type="text"
-                  className={
-                    errors.email1 && touched.email1 ? "input-error" : null
-                  }
-                  placeholder="Confirm your Email *"
-                />
-                <ErrorMessage name="email1" render={renderError} />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label" htmlFor="password">
-                Password
-              </label>
-              <div className="control">
-                <Field
-                  name="password"
-                  type="password"
-                  className={
-                    errors.password && touched.password ? "input-error" : null
-                  }
-                  placeholder="Your Password *"
-                />
-                <ErrorMessage name="password" render={renderError} />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label" htmlFor="password1">
-                Password
-              </label>
-              <div className="control">
-                <Field
-                  name="password1"
-                  type="password"
-                  className={
-                    errors.password1 && touched.password1 ? "input-error" : null
-                  }
-                  placeholder="Confirm your password *"
-                />
-                <ErrorMessage name="password1" render={renderError} />
-              </div>
-            </div>
-
-            <Button
-              variant="outline-primary"
-              type="submit"
-              className={!(dirty && isValid) ? "disabled-btn" : ""}
-              disabled={!(dirty && isValid)}
+      {({
+        handleSubmit,
+        handleChange,
+        handleBlur,
+        values,
+        touched,
+        isValid,
+        errors,
+      }) => (
+        <Form noValidate onSubmit={handleSubmit}>
+          <Form.Label>Registration</Form.Label>
+          <Row>
+            <Form.Group
+              as={Col}
+              md={{span:6 , offset:3}}
+              controlId="validationFormik102"
+              className="position-relative"
             >
-              Registration
-            </Button>
-            </Form>
-          </div>
-        
-        );
-      }}
+              <Form.Control
+                type="text"
+                name="name"
+                placeholder="Your Name *"
+                value={values.name}
+                onChange={handleChange}
+                isInvalid={!!errors.name}
+              />
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.name}
+              </Form.Control.Feedback>
+              </Form.Group>
+          </Row>
+          <Row style={{paddingTop:"30px", paddingBottom:"30px"}}>
+          <Form.Group
+              as={Col}
+              md={{span:6 , offset:3}}
+              controlId="validationFormik102"
+              className="position-relative"
+            >
+              <Form.Control
+                type="text"
+                name="email"
+                placeholder="Your Email *"
+                value={values.email}
+                onChange={handleChange}
+                isInvalid={!!errors.email}
+              />
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.email}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row>
+          <Form.Group
+              as={Col}
+              md={{span:6 , offset:3}}
+              controlId="validationFormik102"
+              className="position-relative"
+            >
+              <Form.Control
+                type="text"
+                placeholder="Confirm your Email *"
+                name="email1"
+                value={values.email1}
+                onChange={handleChange}
+                isInvalid={!!errors.email1}
+              />
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.email1}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row style={{paddingTop:"30px", paddingBottom:"30px"}}>
+          <Form.Group
+              as={Col}
+              md={{span:6 , offset:3}}
+              controlId="validationFormik102"
+              className="position-relative"
+            >
+              <Form.Control
+                type="password"
+                placeholder="Your Password *"
+                name="password"
+                value={values.password}
+                onChange={handleChange}
+                isInvalid={!!errors.password}
+              />
+
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.password}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row style={{paddingBottom:"30px"}}>
+          <Form.Group
+              as={Col}
+              md={{span:6 , offset:3}}
+              controlId="validationFormik102"
+              className="position-relative"
+            >
+              <Form.Control
+                type="password"
+                placeholder="Confirm your Password *"
+                name="password1"
+                value={values.password1}
+                onChange={handleChange}
+                isInvalid={!!errors.password1}
+              />
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.password1}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Button variant="primary" type="submit">Registration</Button>
+        </Form>
+      )}
     </Formik>
+    </div>
   );
 }

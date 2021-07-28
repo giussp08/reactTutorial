@@ -29,9 +29,7 @@ export default function Login() {
     alert(JSON.stringify(values, null, 2));
   };
 
-  const renderError = (message: any) => (
-    <p className="help is-danger">{message}</p>
-  );
+
 
   function handleSubmit(event: any) {
     console.log(event);

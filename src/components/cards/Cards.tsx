@@ -1,25 +1,29 @@
-import React from "react";
-import { Card } from "react-bootstrap";
-import { useHistory } from "react-router";
-import {TCard}  from "../../shared/model/card";
+import { Card, Col, Row } from "react-bootstrap";
+import { TCard } from "../../shared/model/card";
 import CardItem from "./CardItem";
 
 export type CardsData = {
-    cardArr: TCard[];
-}
-const Cards = (props: CardsData) => { // avevo detto di mettere any qua 
-    const { cardArr } = props;
-
-    return (
-        <>
-            {cardArr.map((card, i) => {
-                return (
-                    <div key={i}>
-                        <CardItem cardData={card} />
-                    </div>
-                )
-            })}
-        </>
-    );
-}
+  cardArr: TCard[];
+};
+const Cards = (props: CardsData) => {
+  // avevo detto di mettere any qua
+  const { cardArr } = props;
+  return (
+    <Row>
+    <>
+      {cardArr.map((card, i) => {
+        return (
+          
+            <Col xs={4}>
+              <div className="d-flex justify-content-around" key={i}>
+                <CardItem cardData={card} />
+              </div>
+            </Col>
+          
+        );
+      })}
+    </>
+    </Row>
+  );
+};
 export default Cards;

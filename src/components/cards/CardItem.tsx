@@ -1,12 +1,13 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { TCard } from "../../shared/model/card";
 
 export type CardData = {
   cardData: TCard;
-}
-const CardItem = (props: CardData) => { // avevo detto di mettere any qua ma ormai ho messo il model giusto
+};
+const CardItem = (props: CardData) => {
+  // avevo detto di mettere any qua ma ormai ho messo il model giusto
 
   const { cardData } = props;
 
@@ -18,20 +19,19 @@ const CardItem = (props: CardData) => { // avevo detto di mettere any qua ma orm
 
   return (
     <>
-      <Card
-        className='mb-3'
-        bg='secondary'
-        border='warning'
-        text='light'
-        style={{ minWidth: '18rem' }}
-      >
-        <Card.Body onClick={() => handleClick(cardData.route)}>
-          <Card.Title>{cardData.name}</Card.Title>
-
-          <Card.Subtitle>Go to {cardData.name}</Card.Subtitle>
-        </Card.Body>
-      </Card>
+          <Card
+            className="mb-3"
+            border="warning"
+            bg="secondary"
+            text="light"
+            style={{ width: 200 , height:200}}
+          >
+            <Card.Body onClick={() => handleClick(cardData.route)}>
+              <Card.Title>{cardData.name}</Card.Title>
+              <Card.Subtitle>Go to {cardData.name}</Card.Subtitle>
+            </Card.Body>
+          </Card>
     </>
   );
-}
+};
 export default CardItem;

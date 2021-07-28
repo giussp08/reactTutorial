@@ -1,6 +1,7 @@
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { Cards } from "../const/Menu-const";
+import Cards from "../../components/cards/Cards";
+import {CardsConst} from '../../const/menu-const';
 
 function Home() {
   let history = useHistory();
@@ -11,7 +12,8 @@ function Home() {
   return (
     <div className="d-flex justify-content-around">
       <Row style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-        <Col>
+      <Cards cardArr={CardsConst} />
+        {/* <Col>
           <Card style={{ width: "100%" }}>
             <Card.Body onClick={() => clickPage("/page1")}>
               <Card.Title>Card 1</Card.Title>
@@ -58,7 +60,7 @@ function Home() {
               <Card.Text>Go to Page 6</Card.Text>
             </Card.Body>
           </Card>
-        </Col>
+        </Col> */}
       </Row>
     </div>
   );

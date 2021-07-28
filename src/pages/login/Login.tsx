@@ -10,7 +10,7 @@ function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  let history = useHistory();
+  const history = useHistory();
 
   function handleSubmit(event: any) {
     console.log(event);

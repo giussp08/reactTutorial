@@ -7,18 +7,19 @@ import CardItem from "./CardItem";
 export type CardsData = {
     cardArr: TCard[];
 }
-const Cards = (props: CardsData) => { // avevo detto di mettere any qua 
-    const { cardArr } = props;
-
+const Cards = (props: any) => { // avevo detto di mettere any qua 
+   // const { cardArr } = props;
+    console.log(props);
     return (
+
         <>
-            {cardArr.map((card, i) => {
+       {/*     {cardArr.map((card, i) => {
                 return (
                     <div key={i}>
                         <CardItem cardData={card} />
                     </div>
                 )
-            })}
+            })} */}
         </>
     );
 }

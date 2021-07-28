@@ -12,13 +12,14 @@ import {
 import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Home from "./pages/home/Home";
-import Page1 from "./pages/cards/Page1";
-import Page2 from "./pages/cards/Page2";
-import Page3 from "./pages/cards/Page3";
-import Page4 from "./pages/cards/Page4";
-import Page5 from "./pages/cards/Page5";
-import Page6 from "./pages/cards/Page6";
 import logo from "./logo.svg";
+import Project from "./pages/projectPage/Project";
+import Page1 from "./pages/Page1";
+import Page2 from "./pages/Page2";
+import Page3 from "./pages/Page3";
+import Page4 from "./pages/Page4";
+import Page5 from "./pages/Page5";
+import Page6 from "./pages/Page6";
 
 export default function App() {
 return (
@@ -45,6 +46,9 @@ return (
           </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/project">
+            <Project />
           </Route>
           <Route exact path="/page1">
             <Page1 />

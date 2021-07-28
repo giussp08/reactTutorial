@@ -1,4 +1,4 @@
-import { TCard } from "../shared/model /card";
+import { TCard } from "../shared/model/card";
 
     export const CardsConst : TCard [] = [
         {

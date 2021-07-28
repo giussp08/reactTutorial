@@ -56,7 +56,7 @@ function Login() {
           />
         </Col>
       </Row>
-      <Button variant="primary" onClick={handleLogin} >Login</Button>{" "}
+      <Button variant="primary" disabled={email==="" || password===""} onClick={handleLogin} >Login</Button>{" "}
       <Button variant="link" onClick={handleClick}>Registration</Button>
     </div>
   );

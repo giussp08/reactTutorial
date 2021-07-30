@@ -24,7 +24,7 @@ const CardItem = (props: CardData) => {
             border="warning"
             bg="secondary"
             text="light"
-            style={{ width: 200 , height:200}}
+            style={{ width: 230 , height:230}}
           >
             <Card.Body onClick={() => handleClick(cardData.route)}>
               <Card.Title>{cardData.name}</Card.Title>

@@ -25,16 +25,6 @@ export default function Login() {
       .required(),
   });
 
-  const onSubmit = (values: any) => {
-    alert(JSON.stringify(values, null, 2));
-  };
-
-
-
-  function handleSubmit(event: any) {
-    console.log(event);
-    event.preventDefault();
-  }
 
   function handleClick() {
     history.push("/login");

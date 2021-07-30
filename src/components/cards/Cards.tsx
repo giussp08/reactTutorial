@@ -10,19 +10,17 @@ const Cards = (props: CardsData) => {
   const { cardArr } = props;
   return (
     <Row>
-    <>
-      {cardArr.map((card, i) => {
-        return (
-          
+      <>
+        {cardArr.map((card, i) => {
+          return (
             <Col xs={4}>
               <div className="d-flex justify-content-around" key={i}>
                 <CardItem cardData={card} />
               </div>
             </Col>
-          
-        );
-      })}
-    </>
+          );
+        })}
+      </>
     </Row>
   );
 };

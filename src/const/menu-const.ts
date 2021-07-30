@@ -7,7 +7,7 @@ import { TCard } from "../shared/model/card";
             route: '/project',
         },
         {
-            name: 'Page example 1',
+            name: 'Ricerca Laureati',
             icon: 'icon che ti serve',
             route: '/page1',
         },{

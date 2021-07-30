@@ -14,6 +14,7 @@ import Registration from "./pages/registration/Registration";
 import Home from "./pages/home/Home";
 import logo from "./logo.svg";
 import Project from "./pages/projectPage/Project";
+//import Page1 from "./pages/Page1";
 import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
 import Page3 from "./pages/Page3";

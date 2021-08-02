@@ -12,8 +12,7 @@ import DatePicker from "react-datepicker";
 import "../shared/styles/Button.css";
 import "../shared/styles/styleCard.css"
 import "react-datepicker/dist/react-datepicker.css";
-import { Formik ,useFormik} from "formik";
-import { TDegree } from "../shared/model/degree";
+import { Formik } from "formik";
 import {DegreeConst} from "../const/degree-const";
 
 
@@ -74,7 +73,6 @@ function Page1() {
           handleBlur,
           values,
           setFieldValue,
-          setValues
         }) => (
           <Form id= "myform" onSubmit={handleSubmit}>
             <Row>
@@ -194,15 +192,6 @@ function Page1() {
                                 </option>
                                   )
                               })}
-                              {/* <option value="Laurea in Ingegneria">
-                                Laurea in Ingegneria
-                              </option>
-                              <option value="Laurea in Medincina">
-                                Laurea in Medincina
-                              </option>
-                              <option value="Laurea in Odontoiatria">
-                                Laurea in Odontoiatria
-                              </option> */}
                             </Form.Control>
                             </Col>
                             </Row>

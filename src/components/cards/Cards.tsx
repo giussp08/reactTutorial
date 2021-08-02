@@ -13,7 +13,7 @@ const Cards = (props: CardsData) => {
       <>
         {cardArr.map((card, i) => {
           return (
-            <Col xs={4}>
+            <Col lg={4} md={6} sm={12}>
               <div className="d-flex justify-content-around" key={i}>
                 <CardItem cardData={card} />
               </div>

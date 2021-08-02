@@ -16,7 +16,7 @@ import logo from "./logo.svg";
 import Project from "./pages/projectPage/Project";
 //import Page1 from "./pages/Page1";
 import Page1 from "./pages/Page1";
-import Page2 from "./pages/Page2";
+import Table from "./pages/Table";
 import Page3 from "./pages/Page3";
 import Page4 from "./pages/Page4";
 import Page5 from "./pages/Page5";
@@ -54,8 +54,8 @@ return (
           <Route exact path="/page1">
             <Page1 />
           </Route>
-          <Route exact path="/page2">
-            <Page2 />
+          <Route exact path="/table">
+            <Table />
           </Route>
           <Route exact path="/page3">
             <Page3 />

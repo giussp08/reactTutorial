@@ -11,8 +11,12 @@ import { TCard } from "../shared/model/card";
             icon: 'icon che ti serve',
             route: '/page1',
         },{
-            name: 'page example 2 ',
+            name: 'Table',
             icon: 'icon che ti serve',
-            route: '/page2',
+            route: '/table',
+        },{
+            name: 'Table',
+            icon: 'icon che ti serve',
+            route: '/table',
         }
     ];

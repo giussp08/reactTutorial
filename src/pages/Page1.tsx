@@ -29,8 +29,19 @@ function Page1() {
   ];
 
   function handleClick(ev: any, values: any) {
-
+      var startString = values.startDate.toLocaleDateString();
+      values.startDate = startString;
+      var endString = values.endDate.toLocaleDateString();
+      values.endDate = endString;
+      if(!values.radio){
+          values.radio = null;
+      }
+      if(!values.degree){
+          values.degree=null;
+      }
     console.log(values);
+        values.startDate = new Date(startString);
+        values.endDate = new Date(endString);
   }
 
   function handleReset(setFieldValue:any){
@@ -52,8 +63,8 @@ function Page1() {
           name: "",
           surname: "",
           radio: "",
-          startDate: new Date().toLocaleDateString,
-          endDate: new Date().toLocaleDateString,
+          startDate: new Date(),
+          endDate: new Date(),
           degree: "",
         }}
       >
@@ -156,7 +167,7 @@ function Page1() {
                             <DatePicker
                               className="button"
                               name="endDate"
-                              selected={new Date()}
+                              selected={values.endDate}
                               dateFormat="dd/MM/yyyy"
                               onChange={(date) =>
                                 setFieldValue("endDate", date)
@@ -176,11 +187,12 @@ function Page1() {
                               onChange={handleChange}
                             >
                               {degreeArr.map((degree, i)=>{
-                                  console.log(degree.name);
+                                  return(
                                   <option key={i} 
                                   value={degree.name}>
                                   Laurea in {degree.name}
                                 </option>
+                                  )
                               })}
                               {/* <option value="Laurea in Ingegneria">
                                 Laurea in Ingegneria

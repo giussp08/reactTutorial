@@ -15,8 +15,8 @@ import { TCard } from "../shared/model/card";
             icon: 'icon che ti serve',
             route: '/table',
         },{
-            name: 'Table',
+            name: 'Person Data Detail',
             icon: 'icon che ti serve',
-            route: '/table',
+            route: '/person',
         }
     ];

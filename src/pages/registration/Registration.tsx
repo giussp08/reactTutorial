@@ -68,7 +68,7 @@ export default function Login() {
                   placeholder="Your Name *"
                   value={values.name}
                   onChange={handleChange}
-                  isInvalid={!!errors.name}
+                  isInvalid={ touched.name && !!errors.name }
                 />
                 <Form.Control.Feedback type="invalid" tooltip>
                   {errors.name}
@@ -88,7 +88,7 @@ export default function Login() {
                   placeholder="Your Email *"
                   value={values.email}
                   onChange={handleChange}
-                  isInvalid={!!errors.email}
+                  isValid={!errors.email && touched.email}
                 />
                 <Form.Control.Feedback type="invalid" tooltip>
                   {errors.email}
@@ -149,7 +149,7 @@ export default function Login() {
                   name="password1"
                   value={values.password1}
                   onChange={handleChange}
-                  isInvalid={touched.password1 || !!errors.password1}
+                  isInvalid={!!errors.password1}
                 />
                 <Form.Control.Feedback type="invalid" tooltip>
                   {errors.password1}

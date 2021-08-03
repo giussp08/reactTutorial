@@ -1,22 +1,24 @@
 import { THeader } from "../shared/model/header";
 
-export const HeaderConst: THeader[] = [
+export const HeaderConst: any[] = [
   {
-    name: "Name",
-    surname: "Surname",
-    gender: "Gender",
-    degree: "Degree",
+    header: "Name",
+    accessor: "name",
   },
   {
-    name: "Giuseppe",
-    surname: "Notaro",
-    gender: "M",
-    degree: "Ingegneria",
+    header: "Surname",
+    accessor: "surname",
   },
   {
-    name: "Cristian",
-    surname: "Ababii",
-    gender: "M",
-    degree: "Degree",
+    header:"Gender",
+    accessor:"gender"
   },
+  {
+    header:"Degree",
+    accessor:"degree",
+  },
+  {
+    header: "Tax Code",
+    accessor: "taxCode"
+  }
 ];

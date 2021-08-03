@@ -12,15 +12,13 @@ import {
 import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Home from "./pages/home/Home";
-import logo from "./logo.svg";
 import Project from "./pages/projectPage/Project";
-//import Page1 from "./pages/Page1";
 import Page1 from "./pages/Page1";
 import Table from "./pages/Table";
-import Page3 from "./pages/Page3";
-import Page4 from "./pages/Page4";
 import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
+import PersonDataDetail from "./pages/PersonDataDetail";
+import Person from "./pages/Person";
 
 export default function App() {
 return (
@@ -57,11 +55,11 @@ return (
           <Route exact path="/table">
             <Table />
           </Route>
-          <Route exact path="/page3">
-            <Page3 />
+          <Route exact path="/person" >
+            <PersonDataDetail />
           </Route>
-          <Route exact path="/page4">
-            <Page4 />
+          <Route exact path="/personal">
+            <Person />
           </Route>
           <Route exact path="/page5">
             <Page5 />

@@ -52,8 +52,6 @@ function Page1() {
      setFieldValue('degree',"");
   }
 
-  
-
   return (
     <div className="Search Container">
       <Formik
@@ -168,7 +166,7 @@ function Page1() {
                               selected={values.endDate}
                               dateFormat="dd/MM/yyyy"
                               onChange={(date) =>
-                                setFieldValue("endDate", date)
+                                setFieldValue("endDate", date)  
                               }
                             />
                           </Col>

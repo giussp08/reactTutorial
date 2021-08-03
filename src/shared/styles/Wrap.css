@@ -1,0 +1,13 @@
+.wrap {
+    padding: 0 50px;
+  }
+  
+  table {
+    width: 100%;
+    text-align: center;
+  }
+  
+  tr td {
+    text-align: left;
+    width: 50%;
+  }

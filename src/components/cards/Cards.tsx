@@ -9,7 +9,7 @@ const Cards = (props: CardsData) => {
   // avevo detto di mettere any qua
   const { cardArr } = props;
   return (
-    <Row>
+    <Row style={{ paddingTop: "30px"}}>
       <>
         {cardArr.map((card, i) => {
           return (

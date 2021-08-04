@@ -5,9 +5,10 @@
   table {
     width: 100%;
     text-align: center;
+    border-radius: 10px;
   }
   
   tr td {
     text-align: left;
-    width: 50%;
+    width: 20%;
   }

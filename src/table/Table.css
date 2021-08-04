@@ -1,0 +1,11 @@
+.table {
+      border-radius: 20px;
+    }
+.tableCover:hover{
+    color:white;
+    background-color: yellow;
+}    
+.tableCover{
+    background-color: white;
+    color: black;
+}

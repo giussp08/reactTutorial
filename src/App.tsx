@@ -14,7 +14,7 @@ import Registration from "./pages/registration/Registration";
 import Home from "./pages/home/Home";
 import Project from "./pages/projectPage/Project";
 import Page1 from "./pages/Page1";
-import Table from "./pages/Table";
+import Table from "./table/Table";
 import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
 import PersonDataDetail from "./pages/PersonDataDetail";

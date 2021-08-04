@@ -6,6 +6,10 @@ import { TableData } from "../../const/table-data";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import list from "../../img/list.jpg";
+import person from "../../img/person.png";
+import project from "../../img/project.jpg";
+import search from "../../img/search.png";
 
 export type CardData = {
   cardData: TCard;
@@ -36,17 +40,29 @@ const CardItem = (props: CardData) => {
     });
   }
 
+  function handleSrc(name:string){
+    switch(name){
+      case "Project":
+        return project;
+      case "Ricerca Laureati":
+        return search;
+      case "Table":
+        return list;
+      case "Person Data Detail":
+        return person;      
+    }
+  }
+
   return (
     <>
       <Card
-        className="mb-3"
-        border="warning"
-        bg="secondary"
-        text="light"
-        style={{ width: 230, height: 230 }}
+        className="mb-03"
+        text="dark"
+        style={{width:"270px", height:"270px"}}
       >
         <Card.Body onClick={() => cardData.name==="Person Data Detail" ? handleShow() : handleClick(cardData.route) }>
-          <Card.Title>{cardData.name}</Card.Title>
+        <Card.Img src={handleSrc(cardData.name)}  style={{width:"70%"}}/>
+          <Card.Title >{cardData.name}</Card.Title>
           <Card.Subtitle>Go to {cardData.name}</Card.Subtitle>
         </Card.Body>
       </Card>

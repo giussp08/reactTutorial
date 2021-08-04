@@ -4,11 +4,7 @@ import Cards from "../../components/cards/Cards";
 import {CardsConst} from '../../const/menu-const';
 
 function Home() {
-  let history = useHistory();
 
-  function clickPage(page: string) {
-    history.push(page);
-  }
   return (
     <div>
       <Cards cardArr={CardsConst} />

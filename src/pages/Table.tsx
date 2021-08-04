@@ -24,11 +24,13 @@ const Table = () => {
       <Row style={{ paddingTop: "30px", paddingBottom: "30px" }}>
       <ReactBootstrap.Table striped bordered hover>
         <thead>
+          <tr>
           {headeArr.map((head, i) => {
             return (
               <th key={i}>{head.header}</th>
             )
           })}
+          </tr>
         </thead>
         <tbody>
           {bodyArr.map((head, i) => {

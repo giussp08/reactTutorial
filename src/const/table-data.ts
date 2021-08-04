@@ -14,5 +14,5 @@ export const TableData: any[] = [
     gender: "M",
     degree: "Degree",
     taxCode:"2"
-  },
+  }
 ];

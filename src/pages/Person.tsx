@@ -2,6 +2,7 @@ import { Col, Row, Image, Table } from "react-bootstrap";
 import { TableData } from "../const/table-data";
 import { useLocation } from "react-router-dom";
 import { HeaderConst } from "../const/header-table-const";
+import imgAvatar from "../img/avatar.png";
 
 function Person() {
   const dataArr = TableData;
@@ -9,7 +10,7 @@ function Person() {
   const headeArr = HeaderConst;
 
   return (
-    <div style={{textAlign:"center"}}>
+    <div className="Person Container" style={{textAlign:"center"}}>
       {dataArr.map((data, i) => {
         if (data.taxCode == location.state) {
 
@@ -18,7 +19,9 @@ function Person() {
               <Col xs={6} md={4}>
                 <Image
                   style={{ textAlign: "center" }}
-                  src="/171x180"
+                  src={imgAvatar}
+                  width="96" 
+                  height="95"
                   roundedCircle
                 />
                 <div className="wrap" style={{textAlign:"center"}}>

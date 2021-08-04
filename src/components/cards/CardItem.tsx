@@ -4,6 +4,8 @@ import { useHistory } from "react-router";
 import { TCard } from "../../shared/model/card";
 import { TableData } from "../../const/table-data";
 import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 export type CardData = {
   cardData: TCard;
@@ -17,37 +19,21 @@ const CardItem = (props: CardData) => {
 
   const [show, setShow] = useState(false);
 
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    setShow(true); 
+    console.log(show);
+  };
   const handleClose = () => setShow(false);
 
-  function handleClick(page: string, name: string) {
-    if (name === "Person Data Detail") {
-      return (
-        <Modal show={true} onHide={true}>
-          <Modal.Header >
-            <Modal.Title>Choose the person</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Choose the person
-              </Dropdown.Toggle>
-              {dataArr.map((data, i) => {
-                return (
-                  <Dropdown.Menu>
-                    <Dropdown.Item key={i} href="/personal">
-                      {data.name}
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                );
-              })}
-            </Dropdown>
-          </Modal.Body>
-        </Modal >
-      );
-    } else {
+  function handleClick(page: string){
       history.push(page);
-    }
+  }
+
+  function handleDrop(taxCode: string){
+    history.push({
+      pathname:'/person',
+      state: taxCode,
+    });
   }
 
   return (
@@ -59,11 +45,41 @@ const CardItem = (props: CardData) => {
         text="light"
         style={{ width: 230, height: 230 }}
       >
-        <Card.Body onClick={() => handleClick(cardData.route, cardData.name)}>
+        <Card.Body onClick={() => cardData.name==="Person Data Detail" ? handleShow() : handleClick(cardData.route) }>
           <Card.Title>{cardData.name}</Card.Title>
           <Card.Subtitle>Go to {cardData.name}</Card.Subtitle>
         </Card.Body>
       </Card>
+      <Modal show={show}>
+          <Modal.Header >
+            <Modal.Title>Choose the person</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Choose the person
+              </Dropdown.Toggle>
+              
+               
+                  <Dropdown.Menu>
+                  {dataArr.map((data, i) => {
+                     return (
+                    <Dropdown.Item key={i} onClick={()=>handleDrop(data.taxCode)}>
+                      {data.name}
+                    </Dropdown.Item>
+                     );
+                    })}
+                  </Dropdown.Menu>
+                
+              
+            </Dropdown>
+          </Modal.Body>
+          <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          </Modal.Footer>
+        </Modal >
     </>
   );
 };

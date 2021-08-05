@@ -13,12 +13,12 @@ import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Home from "./pages/home/Home";
 import Project from "./pages/projectPage/Project";
-import Page1 from "./pages/Page1";
+import Page1 from "./pages/search/Page1";
 import Table from "./table/Table";
 import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
 import PersonDataDetail from "./pages/PersonDataDetail";
-import Person from "./pages/Person";
+import Person from "./pages/person/Person";
 
 export default function App() {
 return (

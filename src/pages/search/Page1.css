@@ -1,0 +1,18 @@
+.container{
+    width: 300px;
+    border-width: 0cm;
+    height: 30px;
+}
+
+.container-color{
+    background-color: gainsboro;
+}
+
+
+.container-gender{
+    width: 100px;
+}
+.container-degree{
+    width: 200px;
+    /* margin-left: 57px; */
+}

@@ -31,7 +31,7 @@ export default function Login() {
   }
 
   return (
-    <div className="Registration container">
+    <div className="Registration">
       <Formik
         validationSchema={validationSchema}
         onSubmit={console.log}

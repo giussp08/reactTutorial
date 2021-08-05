@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Col, Dropdown, Modal, Row } from "react-bootstrap";
+import { Button, Card, Col, Dropdown, ListGroup, ListGroupItem, Modal, Row } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { TCard } from "../../shared/model/card";
 import { TableData } from "../../const/table-data";
@@ -71,7 +71,16 @@ const CardItem = (props: CardData) => {
             <Modal.Title>Choose the person</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Dropdown>
+            <ListGroup>
+            {dataArr.map((data, i) => {
+                     return (
+              <ListGroupItem  key={i} onClick={()=>handleDrop(data.taxCode)}>
+                {data.name}
+              </ListGroupItem>
+                     );
+            })}
+            </ListGroup>
+            {/* <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 Choose the person
               </Dropdown.Toggle>
@@ -88,7 +97,7 @@ const CardItem = (props: CardData) => {
                   </Dropdown.Menu>
                 
               
-            </Dropdown>
+            </Dropdown> */}
           </Modal.Body>
           <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

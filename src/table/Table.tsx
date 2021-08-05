@@ -27,7 +27,7 @@ const Table = () => {
           <tr>
           {headeArr.map((head, i) => {
             return (
-              <th key={i} >{head.header}</th>
+              <th key={i} style={{textAlign:"left"}}>{head.header}</th>
             )
           })}
           </tr>

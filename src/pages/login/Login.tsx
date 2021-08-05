@@ -31,7 +31,7 @@ function Login() {
   }
 
   return (
-    <div className="Login container">
+    <div className="Login ">
       <Form.Label>Login for Form 1</Form.Label>
       <br></br>
       <Row>

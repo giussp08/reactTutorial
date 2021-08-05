@@ -9,11 +9,12 @@ import {
   Accordion,
 } from "react-bootstrap";
 import DatePicker from "react-datepicker";
-import "../shared/styles/Button.css";
-import "../shared/styles/styleCard.css"
+import "../../shared/styles/Button.css"
+import "../../shared/styles/styleCard.css"
 import "react-datepicker/dist/react-datepicker.css";
 import { Formik } from "formik";
-import {DegreeConst} from "../const/degree-const";
+import {DegreeConst} from "../../const/degree-const"
+import "./Page1.css"
 
 
 
@@ -53,7 +54,7 @@ function Page1() {
   }
 
   return (
-    <div className="Search Container">
+    <div className="Search Container container-color">
       <Formik
         onSubmit={console.log}
         initialValues={{
@@ -73,7 +74,7 @@ function Page1() {
           setFieldValue,
         }) => (
           <Form id= "myform" onSubmit={handleSubmit}>
-            <Row>
+            <Row style={{backgroundColor:"white"}}>
               <Col md={{ span: 3, offset: 1 }}>
                 <Form.Label>
                   {" "}
@@ -83,7 +84,7 @@ function Page1() {
             </Row>
             <Row>
               <Col md={{ span: 3, offset: 1 }}>
-                <Form.Label>Name</Form.Label>
+                <Form.Label >Name</Form.Label>
                 <Form.Control
                   autoFocus
                   name="name"
@@ -94,7 +95,7 @@ function Page1() {
                 />
               </Col>
               <Col md={{ span: 3, offset: 1 }}>
-                <Form.Label>Surname</Form.Label>
+                <Form.Label >Surname</Form.Label>
                 <Form.Control
                   autoFocus
                   type="text"
@@ -105,16 +106,17 @@ function Page1() {
                 />
               </Col>
               <Col md={{ span: 3, offset: 1 }}>
-                <Form.Label>Gender</Form.Label>
+                <Form.Label >Gender</Form.Label>
                 <Row>
                   <Col md={{ span: 0, offset: 0 }}>
                     <ButtonGroup>
                       {radios.map((radio, idx) => (
                         <ToggleButton
+                        className="container-gender"
                           key={idx}
                           id={`radio-${idx}`}
                           type="radio"
-                          variant={"outline-warning"}
+                          variant={"outline-secondary"}
                           checked={radio.value === values.radio}
                           name="radio"
                           value={radio.value}
@@ -130,7 +132,7 @@ function Page1() {
             </Row>
             <Row style={{ paddingTop: "10px", paddingBottom: "10px" }}>
               <Col md={{ span: 10, offset: 1 }}>
-                <Accordion defaultActiveKey="0">
+                <Accordion >
                       <Accordion.Toggle 
                       as={Button} 
                       variant="link" 
@@ -139,14 +141,14 @@ function Page1() {
                         More Filters
                       </Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
-                      <Card.Body>
+                      {/* <Card.Body> */}
                         <Row>
-                          <Col md={{span:0, offset:0}}>
-                          <Form.Label>Start Date</Form.Label>
+                          <Col >
+                          <Form.Label >Start Date</Form.Label>
                           <Row>
-                          <Col md={{span:0, offset:0}}>
+                          <Col >
                             <DatePicker
-                              className="button"
+                              className="button container "
                               name="startDate"
                               selected={values.startDate}
                               dateFormat="dd/MM/yyyy"
@@ -158,10 +160,10 @@ function Page1() {
                             </Row>
                           </Col>
                           
-                          <Col md={{span:3, offset:1}}>
-                              <Form.Label>End Date</Form.Label>
+                          <Col >
+                              <Form.Label style={{marginLeft:"75px"}} >End Date</Form.Label>
                             <DatePicker
-                              className="button"
+                              className="button container"
                               name="endDate"
                               selected={values.endDate}
                               dateFormat="dd/MM/yyyy"
@@ -171,10 +173,12 @@ function Page1() {
                             />
                           </Col>
                           <Col md={{span:3,offset:1}}>
-                              <Form.Label>Degree</Form.Label>
+                              <Form.Label style={{marginLeft:'57px'}}>Degree</Form.Label>
                               <Row>
                           <Col md={{span:0, offset:0}}>
                             <Form.Control
+                            style={{borderRadius:"5px" , borderWidth:"0cm", height:"30px" }}
+                            className="container-degree "
                               name="degree"
                               as="select"
                               custom
@@ -195,16 +199,17 @@ function Page1() {
                             </Row>
                           </Col>
                         </Row>
-                      </Card.Body>
+                      {/* </Card.Body> */}
                     </Accordion.Collapse>
                 </Accordion>
               </Col>
             </Row>
-            <Row>
-              <Col md={{ span: 5, offset: 9 }}>
+            <Row style={{backgroundColor:"white", paddingTop:"10px"}}>
+              <Col>
                 <Button
+                  style={{marginLeft:"1044px"}}
                   type="submit"
-                  variant="primary"
+                  variant="outline-primary"
                   disabled={values.name === "" && values.surname === ""}
                   onClick={(ev) => handleClick(ev, values)}
                 >
@@ -212,7 +217,7 @@ function Page1() {
                 </Button>
                 {"  "}
                 <Button
-                  variant="danger"
+                  variant="outline-danger"
                   onClick={(ev)=>handleReset(setFieldValue)}
                 >
                   Clear

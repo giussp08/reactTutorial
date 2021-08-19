@@ -144,7 +144,7 @@ function Page1() {
                       {/* <Card.Body> */}
                         <Row>
                           <Col >
-                          <Form.Label >Start Date</Form.Label>
+                          <Form.Label>Start Date</Form.Label>
                           <Row>
                           <Col >
                             <DatePicker
@@ -161,9 +161,9 @@ function Page1() {
                           </Col>
                           
                           <Col >
-                              <Form.Label style={{marginLeft:"75px"}} >End Date</Form.Label>
+                              <Form.Label style={{marginLeft:"102px"}}>End Date</Form.Label>
                             <DatePicker
-                              className="button container"
+                              className="button container-end"
                               name="endDate"
                               selected={values.endDate}
                               dateFormat="dd/MM/yyyy"
@@ -177,7 +177,7 @@ function Page1() {
                               <Row>
                           <Col md={{span:0, offset:0}}>
                             <Form.Control
-                            style={{borderRadius:"5px" , borderWidth:"0cm", height:"30px" }}
+                            style={{borderRadius:"5px" , borderWidth:"0cm", marginLeft:'52px'}}
                             className="container-degree "
                               name="degree"
                               as="select"

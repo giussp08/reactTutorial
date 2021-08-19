@@ -3,3 +3,9 @@
       opacity: .1;
       text-decoration-color: blue;
     }
+.cardImage {
+  object-fit: cover;
+  border-radius: 55;
+      width: 236px;
+      height: 135px;    
+}

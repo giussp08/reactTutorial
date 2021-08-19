@@ -10,10 +10,13 @@ import list from "../../img/list.jpg";
 import person from "../../img/person.png";
 import project from "../../img/project.jpg";
 import search from "../../img/search.png";
+import "../../shared/styles/Hand.css";
+import "../../shared/styles/styleCard.css"
 
 export type CardData = {
   cardData: TCard;
 };
+
 const CardItem = (props: CardData) => {
   // avevo detto di mettere any qua ma ormai ho messo il model giusto
 
@@ -22,6 +25,8 @@ const CardItem = (props: CardData) => {
   let history = useHistory();
 
   const [show, setShow] = useState(false);
+
+  
 
   const handleShow = () => {
     setShow(true); 
@@ -56,12 +61,11 @@ const CardItem = (props: CardData) => {
   return (
     <>
       <Card
-        className="mb-03"
         text="dark"
         style={{width:"270px", height:"270px"}}
       >
-        <Card.Body onClick={() => cardData.name==="Person Data Detail" ? handleShow() : handleClick(cardData.route) }>
-        <Card.Img src={handleSrc(cardData.name)}  style={{width:"70%"}}/>
+        <Card.Body onClick={() => cardData.name==="Person Data Detail" ? handleShow() : handleClick(cardData.route) } className="hand" >
+        <Card.Img src={handleSrc(cardData.name)} className="cardImage" />
           <Card.Title >{cardData.name}</Card.Title>
           <Card.Subtitle>Go to {cardData.name}</Card.Subtitle>
         </Card.Body>
@@ -74,30 +78,12 @@ const CardItem = (props: CardData) => {
             <ListGroup>
             {dataArr.map((data, i) => {
                      return (
-              <ListGroupItem  key={i} onClick={()=>handleDrop(data.taxCode)}>
+              <ListGroupItem  key={i} onClick={()=>handleDrop(data.taxCode)} className="hand">
                 {data.name}
               </ListGroupItem>
                      );
             })}
             </ListGroup>
-            {/* <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Choose the person
-              </Dropdown.Toggle>
-              
-               
-                  <Dropdown.Menu>
-                  {dataArr.map((data, i) => {
-                     return (
-                    <Dropdown.Item key={i} onClick={()=>handleDrop(data.taxCode)}>
-                      {data.name}
-                    </Dropdown.Item>
-                     );
-                    })}
-                  </Dropdown.Menu>
-                
-              
-            </Dropdown> */}
           </Modal.Body>
           <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

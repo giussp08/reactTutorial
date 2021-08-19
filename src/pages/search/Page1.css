@@ -1,18 +1,27 @@
 .container{
-    width: 300px;
+    width: 280px;
     border-width: 0cm;
-    height: 30px;
+    height: 37px;
+    margin-left: 1px;
 }
 
+.container-end{
+    width: 280px;
+    border-width: 0cm;
+    height: 37px;
+    margin-left: 71px;
+}
 .container-color{
+    padding-left: 40px;
+    padding-right: 40px;
     background-color: gainsboro;
+    background-clip: content-box, padding-box;
 }
-
 
 .container-gender{
     width: 100px;
 }
 .container-degree{
     width: 200px;
-    /* margin-left: 57px; */
+    height: 37px;
 }

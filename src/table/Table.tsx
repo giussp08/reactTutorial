@@ -5,6 +5,8 @@ import * as ReactBootstrap from "react-bootstrap";
 import "./Table.css"
 import { useHistory } from "react-router-dom";
 import { Row } from "react-bootstrap";
+import "../shared/styles/Hand.css";
+
 
 const Table = () => {
 
@@ -35,7 +37,7 @@ const Table = () => {
         <tbody>
           {bodyArr.map((head, i) => {
             return (
-              <tr key={i} onClick={(ev) => handleClick(head.taxCode)}  className="tableCover">
+              <tr key={i} onClick={(ev) => handleClick(head.taxCode)}  className="tableCover hand">
                 <td className="tableCover">{head.name}</td>
                 <td className="tableCover">{head.surname}</td>
                 <td className="tableCover">{head.gender}</td>

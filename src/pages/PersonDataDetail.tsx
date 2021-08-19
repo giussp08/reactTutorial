@@ -3,6 +3,7 @@ import { TableData } from "../const/table-data";
 import { PersonalCardsConst } from "../const/card-const";
 import {useLocation } from "react-router-dom";
 import { useHistory } from "react-router";
+import "../shared/styles/Hand.css"
 
 /* export type CardsData = {
   cardArr: TPersonalCard[];
@@ -50,6 +51,7 @@ const PersonDataDetail = () => {
                       >
                         <Card.Body
                           onClick={() => handleClick("/personal", card.name)}
+                          className="hand"
                         >
                           <Card.Title>{card.name}</Card.Title>
                         </Card.Body>

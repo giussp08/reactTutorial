@@ -1,0 +1,26 @@
+.person{
+    color:blue
+}
+.person:hover{
+    color: red;
+    cursor: pointer;
+}
+.table{
+    display: table;
+    width: 100%; 
+  }
+  
+  .table > div {
+    display: table-cell;
+  }
+
+.stylePage{
+    display: flex;
+    justify-content: center;
+}
+.stylePage-color{
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: gainsboro;
+    background-clip: content-box, padding-box;
+}

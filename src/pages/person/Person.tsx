@@ -5,6 +5,7 @@ import { HeaderConst } from "../../const/header-table-const";
 import imgAvatar from "../../img/avatar.png";
 import "./Person.css";
 import { useHistory } from "react-router";
+import { Divider } from '@material-ui/core'
 
 function Person() {
   const dataArr = TableData;
@@ -12,41 +13,48 @@ function Person() {
   const headeArr = HeaderConst;
   let history = useHistory();
 
-  function handleClick() {
-    //history.push()
+  function handleClick(taxCode: string) {
+    history.push({
+      pathname: "/person",
+      state: taxCode,
+    });
   }
 
   return (
-    <div>
+    <div >
       {dataArr.map((data, i) => {
         if (data.taxCode == location.state) {
           return (
             <Row>
-              <h4 onClick={()=>handleClick()}>
-                {"Person Data/" + data.name + " " + data.surname}
-              </h4>
+              <p>
+                Person Data /
+                <span
+                  onClick={() => handleClick(data.taxCode)}
+                  className="person"
+                >
+                  {data.name + " " + data.surname}
+                </span>
+              </p>
 
-              <Row style={{ textAlign: "center" }}>
-                <Col xs={6} md={4}>
+              <Row className="stylePage stylePage-color">
+                <Col lg={6} xs={6} md={4} style={{ textAlign: "center" }}>
                   <Image src={imgAvatar} width="96" height="95" roundedCircle />
-                  <Row style={{ paddingTop: "30px", paddingBottom: "30px" }}>
-                    <Table striped bordered hover>
-                      <thead>
+                  <div className="table" style={{textAlign:"left" }}>
                         {headeArr.map((head, i) => {
-                          return <th key={i}>{head.header}</th>;
+                          if(i!==4){
+                          return <th key={i} style={{borderRight:"1px solid #000"}}>{head.header + " "}</th>;
+                          }else{
+                            return <th key={i} >{head.header + " "}</th>;
+                          }
                         })}
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>{data.name}</td>
-                          <td>{data.surname}</td>
-                          <td>{data.gender}</td>
-                          <td>{data.degree}</td>
-                          <td>{data.taxCode}</td>
-                        </tr>
-                      </tbody>
-                    </Table>
-                  </Row>
+                          <tr key={i}>
+                            <td style={{borderRight:"1px solid #000"}}>{data.name + " "}</td>
+                            <td style={{borderRight:"1px solid #000"}}>{data.surname + " "}</td>
+                            <td style={{borderRight:"1px solid #000"}}>{data.gender + " "}</td>
+                            <td style={{borderRight:"1px solid #000"}}>{data.degree + " "}</td>
+                            <td>{data.taxCode + " "}</td>
+                          </tr>
+                  </div>
                 </Col>
               </Row>
             </Row>

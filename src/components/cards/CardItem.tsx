@@ -12,6 +12,8 @@ import project from "../../img/project.jpg";
 import search from "../../img/search.png";
 import "../../shared/styles/Hand.css";
 import "../../shared/styles/styleCard.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 export type CardData = {
   cardData: TCard;
@@ -66,6 +68,8 @@ const CardItem = (props: CardData) => {
       >
         <Card.Body onClick={() => cardData.name==="Person Data Detail" ? handleShow() : handleClick(cardData.route) } className="hand" >
         <Card.Img src={handleSrc(cardData.name)} className="cardImage" />
+        <FontAwesomeIcon className="overlay" icon={faCoffee} />
+        
           <Card.Title >{cardData.name}</Card.Title>
           <Card.Subtitle>Go to {cardData.name}</Card.Subtitle>
         </Card.Body>

@@ -160,8 +160,9 @@ function Page1() {
                             </Row>
                           </Col>
                           
-                          <Col >
+                          <Col>
                               <Form.Label style={{marginLeft:"102px"}}>End Date</Form.Label>
+                              <Col>
                             <DatePicker
                               className="button container-end"
                               name="endDate"
@@ -171,6 +172,7 @@ function Page1() {
                                 setFieldValue("endDate", date)  
                               }
                             />
+                            </Col>
                           </Col>
                           <Col md={{span:3,offset:1}}>
                               <Form.Label style={{marginLeft:'57px'}}>Degree</Form.Label>

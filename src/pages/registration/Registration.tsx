@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import "./Registration.css";
 import "../../shared/styles/Button.css";
 import * as Yup from "yup";
-import { Formik } from "formik";
+import { ErrorMessage, Formik } from "formik";
 import { Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
@@ -24,7 +24,6 @@ export default function Login() {
       .oneOf([Yup.ref("password"), null], "Passwords must match")
       .required(),
   });
-
 
   function handleClick() {
     history.push("/login");
@@ -68,7 +67,9 @@ export default function Login() {
                   placeholder="Your Name *"
                   value={values.name}
                   onChange={handleChange}
-                  isInvalid={ touched.name && !!errors.name }
+                  onBlur={handleBlur}
+                  isValid={touched.name && !errors.name}
+                  isInvalid={touched.name && !!errors.name}
                 />
                 <Form.Control.Feedback type="invalid" tooltip>
                   {errors.name}
@@ -88,7 +89,9 @@ export default function Login() {
                   placeholder="Your Email *"
                   value={values.email}
                   onChange={handleChange}
-                  isValid={!errors.email && touched.email}
+                  onBlur={handleBlur}
+                  isValid={touched.email && !errors.email}
+                  isInvalid={touched.email && !!errors.email}
                 />
                 <Form.Control.Feedback type="invalid" tooltip>
                   {errors.email}
@@ -108,7 +111,9 @@ export default function Login() {
                   name="email1"
                   value={values.email1}
                   onChange={handleChange}
-                  isInvalid={!!errors.email1}
+                  onBlur={handleBlur}
+                  isValid={touched.email1 && !errors.email1}
+                  isInvalid={touched.email1 && !!errors.email1}
                 />
                 <Form.Control.Feedback type="invalid" tooltip>
                   {errors.email1}
@@ -128,7 +133,9 @@ export default function Login() {
                   name="password"
                   value={values.password}
                   onChange={handleChange}
-                  isInvalid={!!errors.password}
+                  onBlur={handleBlur}
+                  isValid={touched.password && !errors.password}
+                  isInvalid={touched.password && !!errors.password}
                 />
 
                 <Form.Control.Feedback type="invalid" tooltip>
@@ -149,7 +156,9 @@ export default function Login() {
                   name="password1"
                   value={values.password1}
                   onChange={handleChange}
-                  isInvalid={!!errors.password1}
+                  onBlur={handleBlur}
+                  isValid={touched.password1 && !errors.password1}
+                  isInvalid={touched.password1 && !!errors.password1}
                 />
                 <Form.Control.Feedback type="invalid" tooltip>
                   {errors.password1}

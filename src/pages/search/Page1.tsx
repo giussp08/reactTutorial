@@ -148,7 +148,7 @@ function Page1() {
                           <Row>
                           <Col >
                             <DatePicker
-                              className="button container "
+                              className="container "
                               name="startDate"
                               selected={values.startDate}
                               dateFormat="dd/MM/yyyy"
@@ -161,10 +161,9 @@ function Page1() {
                           </Col>
                           
                           <Col>
-                              <Form.Label style={{marginLeft:"102px"}}>End Date</Form.Label>
-                              <Col>
+                              <Form.Label style={{marginLeft:"71px"}}>End Date</Form.Label>
                             <DatePicker
-                              className="button container-end"
+                              className="container-end"
                               name="endDate"
                               selected={values.endDate}
                               dateFormat="dd/MM/yyyy"
@@ -172,14 +171,13 @@ function Page1() {
                                 setFieldValue("endDate", date)  
                               }
                             />
-                            </Col>
                           </Col>
-                          <Col md={{span:3,offset:1}}>
-                              <Form.Label style={{marginLeft:'57px'}}>Degree</Form.Label>
+                          <Col >
+                              <Form.Label style={{marginLeft:'43%'}}>Degree</Form.Label>
                               <Row>
-                          <Col md={{span:0, offset:0}}>
+                          <Col >
                             <Form.Control
-                            style={{borderRadius:"5px" , borderWidth:"0cm", marginLeft:'52px'}}
+                            style={{borderRadius:"5px" , borderWidth:"0cm", marginLeft:'43%'}}
                             className="container-degree "
                               name="degree"
                               as="select"

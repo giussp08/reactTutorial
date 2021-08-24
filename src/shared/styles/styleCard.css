@@ -5,16 +5,14 @@
     }
 .cardImage {
   object-fit: cover;
-  border-radius: 55;
       width: 236px;
       height: 135px;    
 }
 .overlay {
   position: absolute;
-  top: 55%;
-  left: 50%;
-  height: auto;
-  width: auto;
+  top: 50%;
+  left: 42%;
   opacity: 50;
   border-radius: 50%;
+  background-color: white;
 }

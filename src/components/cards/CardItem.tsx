@@ -13,7 +13,10 @@ import search from "../../img/search.png";
 import "../../shared/styles/Hand.css";
 import "../../shared/styles/styleCard.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faFile } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faTable } from '@fortawesome/free-solid-svg-icons'
+import { faPersonBooth } from '@fortawesome/free-solid-svg-icons'
 
 export type CardData = {
   cardData: TCard;
@@ -60,6 +63,7 @@ const CardItem = (props: CardData) => {
     }
   }
 
+
   return (
     <>
       <Card
@@ -68,9 +72,8 @@ const CardItem = (props: CardData) => {
       >
         <Card.Body onClick={() => cardData.name==="Person Data Detail" ? handleShow() : handleClick(cardData.route) } className="hand" >
         <Card.Img src={handleSrc(cardData.name)} className="cardImage" />
-        <FontAwesomeIcon className="overlay" icon={faCoffee} />
-        
-          <Card.Title >{cardData.name}</Card.Title>
+        <FontAwesomeIcon className="overlay" style={{width:"15%",height:"15%"}} icon={cardData.name==="Project" ? faFile : cardData.name==="Ricerca Laureati" ? faSearch : cardData.name==="Table" ? faTable : faPersonBooth } />
+          <Card.Title style={{marginTop:"30px"}}>{cardData.name}</Card.Title>
           <Card.Subtitle>Go to {cardData.name}</Card.Subtitle>
         </Card.Body>
       </Card>

@@ -44,17 +44,17 @@ function Person() {
                   <div className="table" style={{textAlign:"left" }}>
                         {headeArr.map((head, i) => {
                           if(i!==4){
-                          return <th key={i} style={{borderRight:"1px solid #000"}}>{head.header + " "}</th>;
+                          return <th key={i} style={{borderRight:"1px solid #000" , textAlign:"center"}}>{head.header + " "}</th>;
                           }else{
-                            return <th key={i} >{head.header + " "}</th>;
+                            return <th key={i} style={{textAlign:"center"}}>{head.header + " "}</th>;
                           }
                         })}
                           <tr key={i}>
-                            <td style={{borderRight:"1px solid #000"}}>{data.name + " "}</td>
-                            <td style={{borderRight:"1px solid #000"}}>{data.surname + " "}</td>
-                            <td style={{borderRight:"1px solid #000"}}>{data.gender + " "}</td>
-                            <td style={{borderRight:"1px solid #000"}}>{data.degree + " "}</td>
-                            <td>{data.taxCode + " "}</td>
+                            <td style={{borderRight:"1px solid #000", textAlign:"center"}}>{data.name + " "}</td>
+                            <td style={{borderRight:"1px solid #000", textAlign:"center"}}>{data.surname + " "}</td>
+                            <td style={{borderRight:"1px solid #000", textAlign:"center"}}>{data.gender + " "}</td>
+                            <td style={{borderRight:"1px solid #000", textAlign:"center"}}>{data.degree + " "}</td>
+                            <td style={{ textAlign:"center"}}>{data.taxCode + " "}</td>
                           </tr>
                   </div>
                 </Col>

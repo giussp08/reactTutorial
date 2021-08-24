@@ -1,6 +1,7 @@
 .container{
     width: 280px;
     border-width: 0cm;
+    border-radius: 5px;
     height: 37px;
     padding-left: 0cm;
 }
@@ -8,6 +9,8 @@
 .container-end{
     width: 280px;
     border-width: 0cm;
+    margin-left: 25%;
+    border-radius: 5px;
     height: 37px;
 }
 .container-color{

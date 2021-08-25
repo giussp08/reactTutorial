@@ -19,6 +19,7 @@ import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
 import PersonDataDetail from "./pages/PersonDataDetail";
 import Person from "./pages/person/Person";
+import Cv from "./pages/cv/Cv";
 
 export default function App() {
 return (
@@ -60,6 +61,9 @@ return (
           </Route>
           <Route exact path="/personal">
             <Person />
+          </Route>
+          <Route exact path="/cv">
+            <Cv />
           </Route>
           <Route exact path="/page5">
             <Page5 />

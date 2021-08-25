@@ -16,12 +16,18 @@ const PersonDataDetail = () => {
 /*   const { cardArr } = props; */
   let history = useHistory();
 
-  function handleClick(page: string, name: string) {
+  function handleClick(name: string) {
     if (name === "Personal Data") {
       history.push({
-          pathname:page,
+          pathname:"/personal",
           state:location.state
       });
+    }
+    if(name === "CV"){
+      history.push({
+        pathname:"/cv",
+        state:location.state
+    });
     }
   }
 
@@ -50,7 +56,7 @@ const PersonDataDetail = () => {
                         style={{ width: 230, height: 230 }}
                       >
                         <Card.Body
-                          onClick={() => handleClick("/personal", card.name)}
+                          onClick={() => handleClick(card.name)}
                           className="hand"
                         >
                           <Card.Title>{card.name}</Card.Title>

@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./logo.svg";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -26,7 +27,7 @@ return (
     <Router>
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="./logo.svg" width="30" height="30" alt=""></img>
+        <img src={logo} width="30" height="30" alt=""></img>
         <a className="navbar-brand" href="#">Site</a>
           <ul  className="navbar-nav mr-auto">
             <li className="nav-item active">

@@ -2,7 +2,6 @@ import {
   Form,
   Row,
   Col,
-  Card,
   ToggleButton,
   Button,
   ButtonGroup,
@@ -15,7 +14,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Formik } from "formik";
 import {DegreeConst} from "../../const/degree-const"
 import "./Page1.css"
-import { useState } from "react";
 
 
 
@@ -23,16 +21,11 @@ function Page1() {
     
    const degreeArr = DegreeConst;
    console.log(degreeArr);
-/*    const [isTouched, setTouched] = useState(false); */
 
   const radios = [
     { name: "M", value: "Maschio" },
     { name: "F", value: "Femmina" },
   ];
-
-/*   const handleButton = () => setTouched(true);
-
-  const handleButtonFalse = () => setTouched(false); */
   
   function handleClick(ev: any, values: any) {
       var startString = values.startDate.toLocaleDateString();

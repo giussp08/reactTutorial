@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "react-bootstrap";
+import {Col, Row } from "react-bootstrap";
 import { TCard } from "../../shared/model/card";
 import CardItem from "./CardItem";
 

@@ -5,9 +5,6 @@ import {useLocation } from "react-router-dom";
 import { useHistory } from "react-router";
 import "../shared/styles/Hand.css"
 
-/* export type CardsData = {
-  cardArr: TPersonalCard[];
-}; */
 
 const PersonDataDetail = () => {
   const tableData = TableData;

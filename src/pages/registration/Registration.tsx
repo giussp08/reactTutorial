@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import "./Registration.css";
 import "../../shared/styles/Button.css";
 import * as Yup from "yup";
-import { ErrorMessage, Formik } from "formik";
+import {Formik } from "formik";
 import { Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 

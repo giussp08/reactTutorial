@@ -1,4 +1,4 @@
-import { Col, Row, Image, Table } from "react-bootstrap";
+import { Col, Row, Image} from "react-bootstrap";
 import { TableData } from "../../const/table-data";
 import { useLocation } from "react-router-dom";
 import { HeaderConst } from "../../const/header-table-const";
@@ -36,22 +36,22 @@ function Person() {
               </p>
 
               <Row className="stylePage stylePage-color">
-                <Col lg={6} xs={6} md={4} style={{ textAlign: "center" }}>
+                <Col lg={6} xs={6} md={4} className="enter">
                   <Image src={imgAvatar} width="96" height="95" roundedCircle />
                   <div className="table" style={{textAlign:"left" }}>
                         {headeArr.map((head, i) => {
                           if(i!==4){
-                          return <th key={i} style={{borderRight:"1px solid #000" , textAlign:"center"}}>{head.header + " "}</th>;
+                          return <th key={i} className="border-center">{head.header + " "}</th>;
                           }else{
-                            return <th key={i} style={{textAlign:"center"}}>{head.header + " "}</th>;
+                            return <th key={i} className="center">{head.header + " "}</th>;
                           }
                         })}
                           <tr key={i}>
-                            <td style={{borderRight:"1px solid #000", textAlign:"center"}}>{data.name + " "}</td>
-                            <td style={{borderRight:"1px solid #000", textAlign:"center"}}>{data.surname + " "}</td>
-                            <td style={{borderRight:"1px solid #000", textAlign:"center"}}>{data.gender + " "}</td>
-                            <td style={{borderRight:"1px solid #000", textAlign:"center"}}>{data.degree + " "}</td>
-                            <td style={{ textAlign:"center"}}>{data.taxCode + " "}</td>
+                            <td className="border-center">{data.name + " "}</td>
+                            <td className="border-center">{data.surname + " "}</td>
+                            <td className="border-center">{data.gender + " "}</td>
+                            <td className="border-center">{data.degree + " "}</td>
+                            <td className="center">{data.taxCode + " "}</td>
                           </tr>
                   </div>
                 </Col>

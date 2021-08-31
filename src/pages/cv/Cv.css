@@ -2,3 +2,23 @@
     object-fit: cover;
     width: 260px;
 }
+.padding5{
+    padding-top: 5%;
+}
+.row-padding{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-shadow: 10%;
+}
+.col-padding{
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: gainsboro;
+}
+.col-padding2{
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: whitesmoke;
+}

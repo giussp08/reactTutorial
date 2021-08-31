@@ -24,3 +24,10 @@
     background-color: gainsboro;
     background-clip: content-box, padding-box;
 }
+.border-center{
+    border-right: 1px solid #000;
+    text-align: center;
+}
+.center{
+    text-align: center;
+}

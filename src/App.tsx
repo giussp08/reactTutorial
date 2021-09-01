@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "./logo.svg";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -19,8 +18,9 @@ import Table from "./table/Table";
 import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
 import PersonDataDetail from "./pages/PersonDataDetail";
-import Person from "./pages/person/Person";
+import GetPerson from "./pages/person/GetPerson";
 import Cv from "./pages/cv/Cv";
+
 
 export default function App() {
 return (
@@ -61,8 +61,8 @@ return (
             <PersonDataDetail />
           </Route>
           <Route exact path="/personal">
-            <Person />
-          </Route>
+            <GetPerson />
+            </Route>
           <Route exact path="/cv">
             <Cv />
           </Route>

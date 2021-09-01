@@ -15,7 +15,7 @@
   }
 
 .stylePage{
-    display: flex;
+    display: flexbox;
     justify-content: center;
 }
 .stylePage-color{

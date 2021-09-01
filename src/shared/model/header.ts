@@ -3,4 +3,5 @@ export type THeader = {
     surname:string,
     gender:string,
     degree:string,
+    taxCode:string,
 }

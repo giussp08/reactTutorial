@@ -1,5 +1,3 @@
-import { THeader } from "../shared/model/header";
-
 export const HeaderConst: any[] = [
   {
     header: "Name",

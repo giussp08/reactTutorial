@@ -1,15 +1,20 @@
 import { HeaderConst } from "../const/header-table-const";
 import "../shared/styles/Wrap.css"
 import { TableData } from "../const/table-data";
+import { THeader } from "../shared/model/header";
 import * as ReactBootstrap from "react-bootstrap";
 import "./Table.css"
 import { useHistory } from "react-router-dom";
 import { Row } from "react-bootstrap";
 import "../shared/styles/Hand.css";
 
+export type DataType = {
+  repo : THeader[];
+}
 
-const Table = () => {
+const Table = (props:DataType) => {
 
+  const repo = props.repo;
   let history = useHistory();
 
   function handleClick(taxCode : string){
@@ -35,7 +40,7 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {bodyArr.map((head, i) => {
+          {repo.map((head, i) => {
             return (
               <tr key={i} onClick={(ev) => handleClick(head.taxCode)}  className="tableCover hand">
                 <td className="tableCover">{head.name}</td>

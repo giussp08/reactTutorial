@@ -7,18 +7,24 @@ import Header from "./components/Header";
 import Contact from "./components/Contact";
 import Component from "./components/Component";
 import List from "./components/List";
+import { TCv } from "../../shared/model/cv";
 
-function Cv() {
+export type DataCv= {
+  repo:TCv[];
+}
+
+function Cv(props:DataCv) {
   const location = useLocation();
   const dataArr = TableData;
   const cvArr = CvConst;
+  const repo = props.repo;
   return (
     <div>
       {dataArr.map((data, i) => {
         if (data.taxCode == location.state) {
           return (
             <div>
-              {cvArr.map((cv, c) => {
+              {repo.map((cv, c) => {
                 if (data.name == cv.name) {
                   const lang = cv.languages;
                   const hobbies = cv.hobbies;

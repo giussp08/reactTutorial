@@ -14,12 +14,12 @@ import Registration from "./pages/registration/Registration";
 import Home from "./pages/home/Home";
 import Project from "./pages/projectPage/Project";
 import Page1 from "./pages/search/Page1";
-import Table from "./table/Table";
+import GetTable from "./table/GetTable";
 import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
 import PersonDataDetail from "./pages/PersonDataDetail";
 import GetPerson from "./pages/person/GetPerson";
-import Cv from "./pages/cv/Cv";
+import GetCv from "./pages/cv/GetCv";
 
 
 export default function App() {
@@ -55,7 +55,7 @@ return (
             <Page1 />
           </Route>
           <Route exact path="/table">
-            <Table />
+            <GetTable />
           </Route>
           <Route exact path="/person" >
             <PersonDataDetail />
@@ -64,7 +64,7 @@ return (
             <GetPerson />
             </Route>
           <Route exact path="/cv">
-            <Cv />
+            <GetCv />
           </Route>
           <Route exact path="/page5">
             <Page5 />

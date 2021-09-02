@@ -1,6 +1,5 @@
-import { HeaderConst } from "../const/header-table-const";
+
 import "../shared/styles/Wrap.css"
-import { TableData } from "../const/table-data";
 import { THeader } from "../shared/model/header";
 import * as ReactBootstrap from "react-bootstrap";
 import "./Table.css"
@@ -10,11 +9,14 @@ import "../shared/styles/Hand.css";
 
 export type DataType = {
   repo : THeader[];
+  repoHead : any[];
 }
 
-const Table = (props:DataType) => {
+
+const Table = (props:DataType ) => {
 
   const repo = props.repo;
+  const repoHead = props.repoHead;
   let history = useHistory();
 
   function handleClick(taxCode : string){
@@ -23,16 +25,14 @@ const Table = (props:DataType) => {
       state: taxCode,
     });
   }
-
-  const headeArr = HeaderConst;
-  const bodyArr = TableData;
+  
   return (
     <div className="wrap">
       <Row style={{ paddingTop: "30px", paddingBottom: "30px" }}>
       <ReactBootstrap.Table  striped hover style={{backgroundColor: "black", color:"white"}}>
         <thead >
           <tr>
-          {headeArr.map((head, i) => {
+          {repoHead.map((head, i) => {
             return (
               <th key={i} style={{textAlign:"left"}}>{head.header}</th>
             )

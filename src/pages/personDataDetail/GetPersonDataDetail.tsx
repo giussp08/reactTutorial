@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Table from "./Table";
+import PersonDataDetail from "./PersonDataDetail";
 
-export default function GetTable(){
+export default function GetPersonDataDetail(){
     const [repo, setRepo] = useState([]);
-    const [repoHead, setRepoHead] = useState([])
+    const [repoPers, setRepoPers] = useState([]);
 
     useEffect(() => {
         const getRepo = async () => {
           try {
             const response = await axios.get("http://localhost:3000/db");
             const myRepo = response.data;
-            setRepo(myRepo.db.students);
-            setRepoHead(myRepo.db.header);
+            setRepo(myRepo.db.card);
+            setRepoPers(myRepo.db.students);
           } catch (error) {
             console.log(error);
           }
@@ -21,6 +21,6 @@ export default function GetTable(){
       }, []);
       
       return(
-          <Table repo={repo} repoHead={repoHead}/>
+          <PersonDataDetail repo={repo} repoPers={repoPers}/>
       )
 }

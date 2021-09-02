@@ -1,32 +1,34 @@
 import { Col, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import { TableData } from "../../const/table-data";
-import { CvConst } from "../../const/cv-const";
 import "./Cv.css";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
 import Component from "./components/Component";
 import List from "./components/List";
 import { TCv } from "../../shared/model/cv";
+import { THeader } from "../../shared/model/header";
 
 export type DataCv= {
   repo:TCv[];
+  repoPers : THeader[];
 }
 
 function Cv(props:DataCv) {
   const location = useLocation();
-  const dataArr = TableData;
-  const cvArr = CvConst;
+
   const repo = props.repo;
+  const repoPers = props.repoPers;
+
   return (
     <div>
-      {dataArr.map((data, i) => {
+      {repoPers.map((data, i) => {
         if (data.taxCode == location.state) {
           return (
             <div>
               {repo.map((cv, c) => {
                 if (data.name == cv.name) {
                   const lang = cv.languages;
+                  console.log(lang);
                   const hobbies = cv.hobbies;
                   const skill = cv.skill;
                   const exp = cv.experience;

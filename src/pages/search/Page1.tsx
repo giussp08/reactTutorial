@@ -12,22 +12,46 @@ import "../../shared/styles/Button.css"
 import "../../shared/styles/styleCard.css"
 import "react-datepicker/dist/react-datepicker.css";
 import { Formik } from "formik";
-import {DegreeConst} from "../../const/degree-const"
 import "./Page1.css"
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import {THeader} from "../../shared/model/header";
+import {TDegree} from "../../shared/model/degree";
 
 
 
 function Page1() {
     
-   const degreeArr = DegreeConst;
-   console.log(degreeArr);
+  const [repo, setRepo] = useState([]);
+  const [repoDeg, setRepoDeg] = useState([]);
 
   const radios = [
     { name: "M", value: "Maschio" },
     { name: "F", value: "Femmina" },
   ];
+
+  useEffect(() => {
+    const getRepo = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/db");
+        const myRepo = response.data;
+        setRepo(myRepo.db.students);
+        setRepoDeg(myRepo.db.degree);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getRepo();
+  }, []);
   
+  const myRepoDeg : TDegree[] = repoDeg;
+
   function handleClick(ev: any, values: any) {
+
+    const myRepo : THeader[] = repo ;
+    
+    
+
       var startString = values.startDate.toLocaleDateString();
       values.startDate = startString;
       var endString = values.endDate.toLocaleDateString();
@@ -38,7 +62,13 @@ function Page1() {
       if(!values.degree){
           values.degree=null;
       }
-    console.log(values);
+
+      myRepo.map((r,i)=>{
+        if(r.name == values.name || r.surname == values.surname){
+          console.log(r);
+        }
+      })
+      
         values.startDate = new Date(startString);
         values.endDate = new Date(endString);
   }
@@ -184,7 +214,7 @@ function Page1() {
                               onBlur={handleBlur}
                               onChange={handleChange}
                             >
-                              {degreeArr.map((degree, i)=>{
+                              {myRepoDeg.map((degree, i)=>{
                                   return(
                                   <option key={i} 
                                   value={degree.name}>

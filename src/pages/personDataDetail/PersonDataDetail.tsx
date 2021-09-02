@@ -1,14 +1,18 @@
 import { Row, Col, Card } from "react-bootstrap";
-import { TableData } from "../const/table-data";
-import { PersonalCardsConst } from "../const/card-const";
 import {useLocation } from "react-router-dom";
 import { useHistory } from "react-router";
-import "../shared/styles/Hand.css"
+import { TPersonalCard } from "../../shared/model/personalCard";
+import { THeader } from "../../shared/model/header";
+import "../../shared/styles/Hand.css"
 
+export type DataType ={
+  repo :TPersonalCard[];
+  repoPers : THeader[];
+}
 
-const PersonDataDetail = () => {
-  const tableData = TableData;
-  const cardData = PersonalCardsConst;
+const PersonDataDetail = (props:DataType) => {
+  const repo = props.repo;
+  const repoPers = props.repoPers;
   const location = useLocation();
 /*   const { cardArr } = props; */
   let history = useHistory();
@@ -30,7 +34,7 @@ const PersonDataDetail = () => {
 
   return (
     <div className="row justify-content-center">
-      {tableData.map((data, i) => {
+      {repoPers.map((data, i) => {
         if (data.taxCode === location.state) {
           let c = i;
           return (
@@ -41,7 +45,7 @@ const PersonDataDetail = () => {
               <h4 style={{ textAlign: "center" }}>
                 {data.gender} | {data.degree}
               </h4>
-              {cardData.map((card, i) => {
+              {repo.map((card, i) => {
                 return (
                   <Col lg={4} md={6} sm={12}>
                     <div className="d-flex justify-content-around" key={i}>

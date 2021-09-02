@@ -2,25 +2,32 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Person from "./Person";
 
-export default function GetPerson(){
+const GetPerson = () => {
     const [repo, setRepo] = useState([]);
+    const [repoHead,setRepoHead] = useState([]);
 
-    useEffect(() => {
-        const getRepo = async () => {
-          try {
-            const response = await axios.get("http://localhost:3000/students");
-            console.log(response);
-            const myRepo = response.data;
-            console.log(myRepo)
-            setRepo(myRepo);
-          } catch (error) {
-            console.log(error);
-          }
-        };
-        getRepo();
-      }, []);
+
+
+useEffect(() => {
+  const getRepo = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/db");
+      const myRepo = response.data;
+      setRepo(myRepo.db.students);
+      setRepoHead(myRepo.db.header);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  getRepo();
+}, []);
+
       
+
       return(
-          <Person repo={repo}/>
+        <div>
+          <Person repo={repo} repoHead={repoHead}/>
+          </div>
       )
-}
+};
+export default GetPerson;

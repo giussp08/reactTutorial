@@ -16,6 +16,7 @@ export type ListData = {
 };
 
 const List = (props: ListData) => {
+  console.log(props.hobbArr)
   const nameArr = props.nameArr;
   var listArr = props.langArr;
   switch (nameArr) {
@@ -33,6 +34,7 @@ const List = (props: ListData) => {
       break;
     case "Documentation":
       listArr = props.docArr;
+      console.log(listArr)
       break;
   }
 

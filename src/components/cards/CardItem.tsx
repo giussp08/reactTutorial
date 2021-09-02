@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Card, Col, Dropdown, ListGroup, ListGroupItem, Modal, Row } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { TCard } from "../../shared/model/card";
-import { TableData } from "../../const/table-data";
 import { useState } from "react";
+import { THeader } from "../../shared/model/header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import list from "../../img/list.jpg";
@@ -17,6 +17,7 @@ import { faFile } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faTable } from '@fortawesome/free-solid-svg-icons'
 import { faPersonBooth } from '@fortawesome/free-solid-svg-icons'
+import axios from "axios";
 
 export type CardData = {
   cardData: TCard;
@@ -25,12 +26,26 @@ export type CardData = {
 const CardItem = (props: CardData) => {
   // avevo detto di mettere any qua ma ormai ho messo il model giusto
 
-  const { cardData } = props;
-  const dataArr = TableData;
+  const  cardData  = props.cardData;
   let history = useHistory();
 
   const [show, setShow] = useState(false);
+  const [repo ,setRepo] = useState([]);
+  
+  useEffect(() => {
+    const getRepo = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/db");
+        const myRepo = response.data;
+        setRepo(myRepo.db.students);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getRepo();
+  }, []);
 
+  const myRepo : THeader[] = repo;
   
 
   const handleShow = () => {
@@ -83,7 +98,7 @@ const CardItem = (props: CardData) => {
           </Modal.Header>
           <Modal.Body>
             <ListGroup>
-            {dataArr.map((data, i) => {
+            {myRepo.map((data, i) => {
                      return (
               <ListGroupItem  key={i} onClick={()=>handleDrop(data.taxCode)} className="hand">
                 {data.name}

@@ -17,7 +17,7 @@ import Page1 from "./pages/search/Page1";
 import GetTable from "./table/GetTable";
 import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
-import PersonDataDetail from "./pages/PersonDataDetail";
+import GetPersonDataDetail from "./pages/personDataDetail/GetPersonDataDetail";
 import GetPerson from "./pages/person/GetPerson";
 import GetCv from "./pages/cv/GetCv";
 
@@ -58,7 +58,7 @@ return (
             <GetTable />
           </Route>
           <Route exact path="/person" >
-            <PersonDataDetail />
+            <GetPersonDataDetail />
           </Route>
           <Route exact path="/personal">
             <GetPerson />

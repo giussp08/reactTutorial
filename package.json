@@ -24,6 +24,7 @@
     "react-native-unordered-list": "^1.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "superagent": "^6.1.0",
     "typescript": "^4.3.5",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.9"
@@ -55,8 +56,9 @@
   "devDependencies": {
     "@types/jquery": "^3.5.6",
     "@types/react-datepicker": "^4.1.4",
-    "@types/react-router-dom": "^5.1.8"
+    "@types/react-router-dom": "^5.1.8",
+    "@types/superagent": "^4.1.12"
   },
-    "author": "",
+  "author": "",
   "license": "ISC"
 }

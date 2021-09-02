@@ -7,7 +7,7 @@ export type CardsData = {
 };
 const Cards = (props: CardsData) => {
   // avevo detto di mettere any qua
-  const { cardArr } = props;
+  const  cardArr = props.cardArr;
   return (
     <Row style={{ paddingTop: "30px" }}>
       <>

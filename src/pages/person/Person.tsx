@@ -12,6 +12,8 @@ export type DataType = {
 
 function Person(props:DataType) {
   const location = useLocation();
+  const tax = location.key;
+  console.log(tax);
   let history = useHistory();
   const repo=props.repo;
   const repoHead=props.repoHead;

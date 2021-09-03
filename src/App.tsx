@@ -12,7 +12,7 @@ import {
 import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Home from "./pages/home/Home";
-import Project from "./pages/projectPage/Project";
+import Project from "./pages/projectPage/search/Project";
 import Page1 from "./pages/search/Page1";
 import GetTable from "./table/GetTable";
 import Page5 from "./pages/Page5";
@@ -72,7 +72,7 @@ return (
           <Route exact path="/page6">
             <Page6 />
           </Route>
-          <Route exact path="/home">
+          <Route exact path="/home" >
             <Home />
           </Route>
           <Redirect to="/login" />

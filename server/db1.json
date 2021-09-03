@@ -1,0 +1,32 @@
+{
+    "practice":[
+        {
+            "practiceCode":"1",
+            "companyTaxCode":"1",
+            "businessName":"BusinessName",
+            "user":"Giuseppe Notaro",
+            "taxCode":"1",
+            "ndg":"NDG",
+            "ndgLegal":"NDGLegal",
+            "step":1,
+            "package":1,
+            "lastEditDateFrom":"01/01/2020",
+            "lastEditDateTo":"01/05/2020",
+            "practiceStartDate":"01/01/2021"
+        },
+        {
+            "practiceCode":"2",
+            "companyTaxCode":"2",
+            "businessName":"BusinessName",
+            "user":"Giacomo Rossi",
+            "taxCode":"2",
+            "ndg":"NDG",
+            "ndgLegal":"NDGLegal",
+            "step":2,
+            "package":2,
+            "lastEditDateFrom":"01/01/2021",
+            "lastEditDateTo":"01/05/2021",
+            "practiceStartDate":"01/06/2021"
+        }
+    ]
+}

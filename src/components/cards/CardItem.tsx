@@ -21,12 +21,14 @@ import axios from "axios";
 
 export type CardData = {
   cardData: TCard;
+  loc:unknown;
 };
 
 const CardItem = (props: CardData) => {
   // avevo detto di mettere any qua ma ormai ho messo il model giusto
 
   const  cardData  = props.cardData;
+  const loc = props.loc;
   let history = useHistory();
 
   const [show, setShow] = useState(false);
@@ -55,13 +57,16 @@ const CardItem = (props: CardData) => {
   const handleClose = () => setShow(false);
 
   function handleClick(page: string){
-      history.push(page);
+      history.push({
+       pathname: page,
+       state: loc,
+      });
   }
 
   function handleDrop(taxCode: string){
     history.push({
       pathname:'/person',
-      state: taxCode,
+      state: taxCode
     });
   }
 

@@ -1,0 +1,13 @@
+.center-col{
+    flex: 1;
+  overflow: auto;
+}
+.table{
+    display: table;
+    width: 100%; 
+    overflow: scroll;
+  }
+  
+  .table > div {
+    display: table-cell;
+  }

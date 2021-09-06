@@ -28,5 +28,32 @@
             "lastEditDateTo":"01/05/2021",
             "practiceStartDate":"01/06/2021"
         }
+    ],
+    "headerProj":[
+        {
+            "name": "Codice Pratica"
+        },{
+            "name":"Codice fiscale azienda"
+        },{
+            "name":"Ragione Sociale"
+        },{
+            "name":"Nome e cognome utente"
+        },{
+            "name":"Codice fiscale persona fisica"
+        },{
+            "name":"NDG persona fisica"
+        },{
+            "name":"NDG persona giuridica"
+        },{
+            "name":"Step"
+        },{
+            "name":"Pacchetto"
+        },{
+            "name":"Data ultima modifica Da"
+        },{
+            "name":"Data ultima modifica A"
+        },{
+            "name":"Data avvio pratica"
+        }
     ]
 }

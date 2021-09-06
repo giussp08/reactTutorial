@@ -6,13 +6,57 @@ import {
   Col,
   Form,
   Row,
+  Table,
   ToggleButton,
 } from "react-bootstrap";
 import "./Project.css";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { TPractice } from "../../../shared/model/practice";
+import Tablee from "../table/Tablee";
 
 function Project() {
   const location = useLocation();
+  const [value, setValue] = useState("default");
+  const [click, setClick] = useState(false);
+  const [repo, setRepo] = useState([]);
+
+  useEffect(() => {
+    const getRepo = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/practice");
+        const myRepo = response.data;
+        setRepo(myRepo);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getRepo();
+  }, []);
+
+  const myRepo: TPractice[] = repo;
+  let array: TPractice[] = [];
+
+  function handleReset(setFieldValue:any){
+    setFieldValue('practiceCode',"");
+    setFieldValue('companyTaxCode',"");
+    setFieldValue('businessName',"");
+    setFieldValue('user',"");
+    setFieldValue('taxCode',"");
+    setFieldValue('ndg',"");
+    setFieldValue('ndgLegal',"");
+    setFieldValue('step',"");
+    setFieldValue('package',"");
+    setFieldValue('lastEditDateFrom',"");
+    setFieldValue('lastEditDateTo',"");
+    setFieldValue('practiceStartDate',"");
+    array=[];
+ }
+
+  function handleClick(ev: any, values: any) {
+    setClick(true);
+  }
 
   return (
     <div className="search">
@@ -26,11 +70,11 @@ function Project() {
           taxCode: "",
           ndg: "",
           ndgLegal: "",
-          step: null,
-          package: null,
-          lastEditDateFrom: new Date(),
-          lastEditDateTo: new Date(),
-          practiceStartDate: new Date(),
+          step: "",
+          package: "",
+          lastEditDateFrom: "",
+          lastEditDateTo: "",
+          practiceStartDate: "",
         }}
       >
         {({
@@ -55,7 +99,12 @@ function Project() {
                 <form>
                   <label style={{ fontSize: "13px" }}>
                     Codice pratica:
-                    <input type="text" name="nome" />
+                    <input
+                      type="text"
+                      name="practiceCode"
+                      value={values.practiceCode}
+                      onChange={handleChange}
+                    />
                   </label>
                 </form>
               </Col>
@@ -63,7 +112,13 @@ function Project() {
                 <form>
                   <label style={{ fontSize: "13px" }}>
                     Codice fiscale azienda:
-                    <input type="text" name="nome" placeholder="Lorem ipsum" />
+                    <input
+                      type="text"
+                      name="companyTaxCode"
+                      placeholder="Lorem ipsum"
+                      value={values.companyTaxCode}
+                      onChange={handleChange}
+                    />
                   </label>
                 </form>
               </Col>
@@ -71,7 +126,13 @@ function Project() {
                 <form>
                   <label style={{ fontSize: "13px" }}>
                     Ragione sociale:
-                    <input type="text" name="nome" placeholder="Lorem ipsum" />
+                    <input
+                      type="text"
+                      name="businessName"
+                      placeholder="Lorem ipsum"
+                      value={values.businessName}
+                      onChange={handleChange}
+                    />
                   </label>
                 </form>
               </Col>
@@ -79,7 +140,13 @@ function Project() {
                 <form>
                   <label style={{ fontSize: "13px" }}>
                     Nome e cognome utente:
-                    <input type="text" name="nome" placeholder="Lorem ipsum" />
+                    <input
+                      type="text"
+                      name="user"
+                      placeholder="Lorem ipsum"
+                      value={values.user}
+                      onChange={handleChange}
+                    />
                   </label>
                 </form>
               </Col>
@@ -97,8 +164,10 @@ function Project() {
                           Codice fiscale persona fisica:
                           <input
                             type="text"
-                            name="nome"
+                            name="taxCode"
                             placeholder="Lorem ipsum"
+                            value={values.taxCode}
+                            onChange={handleChange}
                           />
                         </label>
                       </form>
@@ -109,8 +178,10 @@ function Project() {
                           NDG persona fisica:
                           <input
                             type="text"
-                            name="nome"
+                            name="ndg"
                             placeholder="Lorem ipsum"
+                            value={values.ndg}
+                            onChange={handleChange}
                           />
                         </label>
                       </form>
@@ -121,8 +192,10 @@ function Project() {
                           NDG persona giuridica:
                           <input
                             type="text"
-                            name="nome"
+                            name="ndgLegal"
                             placeholder="Lorem ipsum"
+                            value={values.ndgLegal}
+                            onChange={handleChange}
                           />
                         </label>
                       </form>
@@ -132,7 +205,16 @@ function Project() {
                         <label style={{ fontSize: "13px" }}>
                           Step:
                           <br></br>
-                          <select style={{width:"157px", height:"25px"}} placeholder="Lorem ipsum">
+                          <select
+                            name="step"
+                            defaultValue={value}
+                            value={values.step}
+                            style={{ width: "155.5px", height: "25.2px" }}
+                            onChange={handleChange}
+                          >
+                            <option value="default" disabled hidden>
+                              Lorem ipsum
+                            </option>
                             <option value="pompelmo">Pompelmo</option>
                             <option value="limone">Limone</option>
                             <option selected value="cocco">
@@ -148,7 +230,16 @@ function Project() {
                         <label style={{ fontSize: "13px" }}>
                           Pacchetto:
                           <br></br>
-                          <select style={{width:"157px", height:"25px"}} placeholder="Lorem ipsum">
+                          <select
+                            name="package"
+                            defaultValue={value}
+                            value={values.package}
+                            style={{ width: "155.5px", height: "25.2px" }}
+                            onChange={handleChange}
+                          >
+                            <option value="default" disabled hidden>
+                              Lorem ipsum
+                            </option>
                             <option value="pompelmo">Pompelmo</option>
                             <option value="limone">Limone</option>
                             <option selected value="cocco">
@@ -162,27 +253,41 @@ function Project() {
                     <Col lg={3}>
                       <form>
                         <label style={{ fontSize: "13px" }}>
-                          Data ultima modifica :
-                          <input type="text" name="nome" />
-                        </label>
-                      </form>
-                    </Col>
-                    <Col lg={3}>
-                      <form>
-                        <label style={{ fontSize: "13px" }}>
-                          Data ultima Modifica :
-                          <input type="text" name="nome" />
-                        </label>
-                      </form>
-                    </Col>
-                    <Col lg={3}>
-                      <form>
-                        <label style={{ fontSize: "13px" }}>
-                          Data avvio pratica :
+                          Data ultima modifica:
                           <input
-                            type="text"
-                            name="nome"
-                            placeholder="Lorem ipsum"
+                            type="date"
+                            name="data"
+                            value={values.lastEditDateFrom}
+                            style={{ height: "25.2px", width: "155.5px" }}
+                            onChange={handleChange}
+                          />
+                        </label>
+                      </form>
+                    </Col>
+                    <Col lg={3}>
+                      <form>
+                        <label style={{ fontSize: "13px" }}>
+                          Data ultima modifica:
+                          <input
+                            type="date"
+                            name="data"
+                            value={values.lastEditDateTo}
+                            style={{ height: "25.2px", width: "155.5px" }}
+                            onChange={handleChange}
+                          />
+                        </label>
+                      </form>
+                    </Col>
+                    <Col lg={3}>
+                      <form>
+                        <label style={{ fontSize: "13px" }}>
+                          Data avvio pratica:
+                          <input
+                            type="date"
+                            name="data"
+                            value={values.practiceStartDate}
+                            style={{ height: "25.2px", width: "155.5px" }}
+                            onChange={handleChange}
                           />
                         </label>
                       </form>
@@ -190,6 +295,67 @@ function Project() {
                   </Row>
                 </Accordion.Collapse>
               </Accordion>
+              <Button
+                style={{
+                  marginLeft: "71%",
+                  width: "90px",
+                  height: "37px",
+                  borderWidth: "2px",
+                  textAlign: "center",
+                  fontSize: "12px",
+                  textShadow: "10px 10px 10px 10px",
+                  marginTop: "15px",
+                }}
+                type="submit"
+                variant="outline-dark"
+                onClick={(ev)=>handleReset(setFieldValue)}
+              >
+                Reset filtri
+              </Button>
+              {"    "}
+              <Button
+                style={{
+                  marginLeft: "21px",
+                  width: "90px",
+                  height: "37px",
+                  borderWidth: "0px",
+                  textAlign: "center",
+                  fontSize: "12px",
+                  textShadow: "10px 10px 10px 10px",
+                  marginTop: "15px",
+                  backgroundColor: "#048686",
+                }}
+                type="submit"
+                variant="dark"
+                onClick={(ev) => handleClick(ev, values)}
+              >
+                Cerca
+              </Button>
+            </Row>
+            <Row>
+              <Col style={{ backgroundColor: "gainsboro" }}>
+                {myRepo.map((r, i) => {
+                  if (
+                    values.practiceCode == r.practiceCode ||
+                    values.companyTaxCode == r.companyTaxCode ||
+                    values.businessName == r.businessName ||
+                    values.user == r.user ||
+                    values.taxCode == r.taxCode ||
+                    values.ndg == r.ndg ||
+                    values.ndgLegal == r.ndgLegal ||
+                    parseInt(values.step) == r.step ||
+                    parseInt(values.package) == r.package ||
+                    values.lastEditDateFrom == r.lastEditDateFrom ||
+                    values.lastEditDateTo == r.lastEditDateTo ||
+                    values.practiceStartDate == r.practiceStartDate
+                  ) {
+                    array[i] = r;
+                  }
+                })}
+                <p style={{ fontSize: "12px" }}>
+                  {click == false ? "Risultati:0" : <Tablee repo={array} />}
+                </p>
+              </Col>
             </Row>
           </Form>
         )}

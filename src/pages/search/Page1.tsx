@@ -49,9 +49,6 @@ function Page1() {
   function handleClick(ev: any, values: any) {
 
     const myRepo : THeader[] = repo ;
-    
-    
-
       var startString = values.startDate.toLocaleDateString();
       values.startDate = startString;
       var endString = values.endDate.toLocaleDateString();

@@ -3,10 +3,12 @@ import { Col, Row } from "react-bootstrap";
 import { TPractice } from "../../../shared/model/practice";
 import axios from "axios";
 import "./Tablee.css";
+import { Table } from 'reactstrap';
 
 export type DataType = {
   repo: TPractice[];
 };
+
 
 const Tablee = (props: DataType) => {
   const repo = props.repo;
@@ -27,6 +29,16 @@ const Tablee = (props: DataType) => {
 
   const myRepo: any[] = repoHead;
 
+  const sortBy = (key:any)=> {
+    repo.sort(compareBy(key));
+  }
+
+  const compareBy=(key:any)=>(a:any,b:any) =>{
+      if (a[key] < b[key]) return -1;
+      if (a[key] > b[key]) return 1;
+      return 0;
+    };
+ 
 if(repo.length===0){
     return(
         <div>
@@ -34,34 +46,43 @@ if(repo.length===0){
         </div>
     )
 }else{
-  return (
-    <div className="center-col table">
-        <Col lg={12}>
-      {myRepo.map((head, i) => {
-        return <th key={i}>{head.name}</th>;
-      })}
-      
-      {repo.map((r, i) => {
-        return (
-            <tr key={i}>
-              <td>{r.practiceCode }</td>
-              <td>{r.companyTaxCode }</td>
-              <td>{r.businessName }</td>
-              <td>{r.user }</td>
-              <td>{r.taxCode}</td>
-              <td>{r.ndg }</td>
-              <td>{r.ndgLegal }</td>
-              <td>{r.step }</td>
-              <td>{r.package }</td>
-              <td>{r.lastEditDateFrom }</td>
-              <td>{r.lastEditDateTo }</td>
-              <td>{r.practiceStartDate }</td>
-            </tr>
-        );
-      })}
-      </Col>
-    </div>
-  );
-    }
+  return(
+    <div style={{marginLeft:"10%", marginRight:"14%"}}>
+    <Table  style={{width:"100%"}} >
+      <thead>
+        <tr>
+          {myRepo.map((r,i)=>{
+            return(
+              <th  style={{fontSize:"11px"}} key={i} onClick={(ev) => sortBy(r.key)} >{r.title}</th>
+            )
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        {repo.map((r,i)=>{
+          return(
+          <tr key={i} style={{marginBottom:"10%", fontSize:"11px", backgroundColor:"white"}}>
+          <td >{r.practiceCode}</td>
+          <td >{r.companyTaxCode}</td>
+          <td >{r.businessName}</td>
+          <td >{r.user}</td>
+          <td >{r.taxCode}</td>
+          <td >{r.ndg}</td>
+          <td >{r.ndgLegal}</td>
+          <td >{r.step}</td>
+          <td >{r.package}</td>
+          <td >{r.lastEditDateFrom}</td>
+          <td >{r.lastEditDateFrom}</td>
+          <td >{r.practiceStartDate}</td>
+          </tr>
+          );
+        })}
+        </tbody>
+        </Table>
+        </div>
+  )
+  
+ 
+};
 };
 export default Tablee;

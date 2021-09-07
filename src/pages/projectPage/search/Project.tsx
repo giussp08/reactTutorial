@@ -56,6 +56,25 @@ function Project() {
 
   function handleClick(ev: any, values: any) {
     setClick(true);
+    var str : string = "";
+    if(values.lastEditDateFrom!==""){
+      str=values.lastEditDateFrom;
+       Date.parse(str);
+       const [year, month, day] =  str.split('-');
+      values.lastEditDateFrom = (`${day}/${month}/${year}`); 
+    }
+    if(values.lastEditDateTo!==""){
+      str=values.lastEditDateTo;
+       Date.parse(str);
+       const [year, month, day] =  str.split('-');
+      values.lastEditDateTo = (`${day}/${month}/${year}`); 
+    }
+    if(values.practiceStartDate!==""){
+      str=values.practiceStartDate;
+       Date.parse(str);
+       const [year, month, day] =  str.split('-');
+      values.practiceStartDate = (`${day}/${month}/${year}`); 
+    }
   }
 
   return (
@@ -85,7 +104,7 @@ function Project() {
           setFieldValue,
         }) => (
           <Form id="myform" onSubmit={handleSubmit}>
-            <Row style={{ backgroundColor: "white" }}>
+            <Row style={{ backgroundColor: "white" , marginLeft:"15%",marginRight:"15%"}}>
               <Col lg={3}>
                 <form style={{ marginBottom: "25%", marginTop: "20%" }}>
                   <label>
@@ -94,7 +113,7 @@ function Project() {
                 </form>
               </Col>
             </Row>
-            <Row>
+            <Row style={{ backgroundColor: "white" , marginLeft:"15%",marginRight:"15%"}}>
               <Col lg={3}>
                 <form>
                   <label style={{ fontSize: "13px" }}>
@@ -151,11 +170,9 @@ function Project() {
                 </form>
               </Col>
             </Row>
-            <Row style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+            <Row style={{ paddingTop: "10px", paddingBottom: "10px" , backgroundColor: "white" , marginLeft:"15%",marginRight:"15%"}}>
               <Accordion>
-                <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                  Filtri Avanzati
-                </Accordion.Toggle>
+                
                 <Accordion.Collapse eventKey="0">
                   <Row style={{ marginTop: "3%" }}>
                     <Col lg={3}>
@@ -207,7 +224,6 @@ function Project() {
                           <br></br>
                           <select
                             name="step"
-                            defaultValue={value}
                             value={values.step}
                             style={{ width: "155.5px", height: "25.2px" }}
                             onChange={handleChange}
@@ -215,12 +231,11 @@ function Project() {
                             <option value="default" disabled hidden>
                               Lorem ipsum
                             </option>
-                            <option value="pompelmo">Pompelmo</option>
-                            <option value="limone">Limone</option>
-                            <option selected value="cocco">
-                              Cocco
-                            </option>
-                            <option value="mango">Mango</option>
+                            {myRepo.map((r,i)=>{
+                              return(
+                                <option key={i} value={r.step}>{r.step}</option>
+                              );
+                            })}
                           </select>
                         </label>
                       </form>
@@ -240,12 +255,11 @@ function Project() {
                             <option value="default" disabled hidden>
                               Lorem ipsum
                             </option>
-                            <option value="pompelmo">Pompelmo</option>
-                            <option value="limone">Limone</option>
-                            <option selected value="cocco">
-                              Cocco
-                            </option>
-                            <option value="mango">Mango</option>
+                            {myRepo.map((r,i)=>{
+                              return(
+                                <option key={i} value={r.package}>{r.package}</option>
+                              )
+                            })}
                           </select>
                         </label>
                       </form>
@@ -256,7 +270,7 @@ function Project() {
                           Data ultima modifica:
                           <input
                             type="date"
-                            name="data"
+                            name="lastEditDateFrom"
                             value={values.lastEditDateFrom}
                             style={{ height: "25.2px", width: "155.5px" }}
                             onChange={handleChange}
@@ -270,7 +284,7 @@ function Project() {
                           Data ultima modifica:
                           <input
                             type="date"
-                            name="data"
+                            name="lastEditDateTo"
                             value={values.lastEditDateTo}
                             style={{ height: "25.2px", width: "155.5px" }}
                             onChange={handleChange}
@@ -284,7 +298,7 @@ function Project() {
                           Data avvio pratica:
                           <input
                             type="date"
-                            name="data"
+                            name="practiceStartDate"
                             value={values.practiceStartDate}
                             style={{ height: "25.2px", width: "155.5px" }}
                             onChange={handleChange}
@@ -294,6 +308,9 @@ function Project() {
                     </Col>
                   </Row>
                 </Accordion.Collapse>
+                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                  Filtri Avanzati
+                </Accordion.Toggle>
               </Accordion>
               <Button
                 style={{
@@ -332,8 +349,8 @@ function Project() {
                 Cerca
               </Button>
             </Row>
-            <Row>
-              <Col style={{ backgroundColor: "gainsboro" }}>
+            <Row style={{marginLeft:"7%",marginRight:"7%"}}>
+              <Col style={{ backgroundColor: "whitesmoke" }}>
                 {myRepo.map((r, i) => {
                   if (
                     values.practiceCode == r.practiceCode ||

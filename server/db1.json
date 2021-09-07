@@ -1,59 +1,106 @@
 {
-    "practice":[
-        {
-            "practiceCode":"1",
-            "companyTaxCode":"1",
-            "businessName":"BusinessName",
-            "user":"Giuseppe Notaro",
-            "taxCode":"1",
-            "ndg":"NDG",
-            "ndgLegal":"NDGLegal",
-            "step":1,
-            "package":1,
-            "lastEditDateFrom":"01/01/2020",
-            "lastEditDateTo":"01/05/2020",
-            "practiceStartDate":"01/01/2021"
-        },
-        {
-            "practiceCode":"2",
-            "companyTaxCode":"2",
-            "businessName":"BusinessName",
-            "user":"Giacomo Rossi",
-            "taxCode":"2",
-            "ndg":"NDG",
-            "ndgLegal":"NDGLegal",
-            "step":2,
-            "package":2,
-            "lastEditDateFrom":"01/01/2021",
-            "lastEditDateTo":"01/05/2021",
-            "practiceStartDate":"01/06/2021"
-        }
-    ],
-    "headerProj":[
-        {
-            "name": "Codice Pratica"
-        },{
-            "name":"Codice fiscale azienda"
-        },{
-            "name":"Ragione Sociale"
-        },{
-            "name":"Nome e cognome utente"
-        },{
-            "name":"Codice fiscale persona fisica"
-        },{
-            "name":"NDG persona fisica"
-        },{
-            "name":"NDG persona giuridica"
-        },{
-            "name":"Step"
-        },{
-            "name":"Pacchetto"
-        },{
-            "name":"Data ultima modifica Da"
-        },{
-            "name":"Data ultima modifica A"
-        },{
-            "name":"Data avvio pratica"
-        }
-    ]
+  "practice": [
+    {
+      "practiceCode": "1",
+      "companyTaxCode": "1",
+      "businessName": "BusinessName",
+      "user": "Giuseppe Notaro",
+      "taxCode": "1",
+      "ndg": "NDG",
+      "ndgLegal": "NDGLegal",
+      "step": 1,
+      "package": 1,
+      "lastEditDateFrom": "01/01/2020",
+      "lastEditDateTo": "01/05/2020",
+      "practiceStartDate": "01/01/2021"
+    },
+    {
+      "practiceCode": "2",
+      "companyTaxCode": "2",
+      "businessName": "BusinessName",
+      "user": "Giacomo Rossi",
+      "taxCode": "2",
+      "ndg": "NDG",
+      "ndgLegal": "NDGLegal",
+      "step": 2,
+      "package": 2,
+      "lastEditDateFrom": "01/01/2021",
+      "lastEditDateTo": "01/05/2021",
+      "practiceStartDate": "01/06/2021"
+    }
+  ],
+  "headerProj": [
+    {
+      "title": "Codice Pratica",
+      "dataIndex": "practiceCode",
+      "key": "practiceCode",
+      "width": 100
+    },
+    {
+      "title": "Codice fiscale azienda",
+      "dataIndex": "companyTaxCode",
+      "key": "companyTaxCode",
+      "width": 50
+    },
+    {
+      "title": "Ragione Sociale",
+      "dataIndex": "businessName",
+      "key": "businessName",
+      "width": 50
+    },
+    {
+      "title": "Nome e cognome utente",
+      "dataIndex": "user",
+      "key": "user",
+      "width": 200
+    },
+    {
+      "title": "Codice fiscale persona fisica",
+      "dataIndex": "taxCode",
+      "key": "taxCode",
+      "width": 200
+    },
+    {
+      "title": "NDG persona fisica",
+      "dataIndex": "ndg",
+      "key": "ndg",
+      "width": 200
+    },
+    {
+      "title": "NDG persona giuridica",
+      "dataIndex": "ndgLegal",
+      "key": "ndgLegal",
+      "width": 200
+    },
+    {
+      "title": "Step",
+      "dataIndex": "step",
+      "key": "step",
+      "width": 100
+    },
+    {
+      "title": "Pacchetto",
+      "dataIndex": "package",
+      "key": "package",
+      "width": 100
+    },
+    {
+      "title": "Data ultima modifica Da",
+      "dataIndex": "lastEditDateFrom",
+      "key": "lastEditDateFrom",
+      "width": 200
+    },
+    {
+      "title": "Data ultima modifica A",
+      "dataIndex": "lastEditDateTo",
+      "key": "lastEditDateTo",
+      "width": 200
+    },
+    {
+      "title": "Data avvio pratica",
+      "dataIndex": "practiceStartDate",
+      "key": "practiceStartDate",
+      "width": 200
+    }
+  ]
 }

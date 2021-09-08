@@ -1,3 +1,7 @@
 .hand:hover{
     cursor: pointer;
 }
+.handhand:hover{
+    cursor: pointer;
+    color: #048686;
+}

@@ -170,10 +170,9 @@ function Project() {
                 </form>
               </Col>
             </Row>
-            <Row style={{ paddingTop: "10px", paddingBottom: "10px" , backgroundColor: "white" , marginLeft:"15%",marginRight:"15%"}}>
+            <Row style={{ paddingTop: "5px", paddingBottom: "5px" , backgroundColor: "white" , marginLeft:"15%",marginRight:"15%"}}>
               <Accordion>
-                
-                <Accordion.Collapse eventKey="0">
+                <Accordion.Collapse eventKey="0" style={{paddingBottom:"5%"}}>
                   <Row style={{ marginTop: "3%" }}>
                     <Col lg={3}>
                       <form>

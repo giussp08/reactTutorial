@@ -17,6 +17,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import { Avatar } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
+import { color } from "@material-ui/system";
+import { green } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
       },
       av:{
           width:theme.spacing(3),
-          height:theme.spacing(3)
+          height:theme.spacing(3),
+          color:"green"
       }
   }));
 
@@ -161,7 +164,7 @@ const Practice = () => {
                   <ListItem >
                     <ListItemAvatar>
                       <Avatar className={classes.av}>
-                        <CheckCircleOutlineIcon />
+                        <CheckCircleIcon />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText classes={{primary:classes.listItemText}} primary="Identificazione" />
@@ -169,7 +172,7 @@ const Practice = () => {
                   <ListItem>
                     <ListItemAvatar >
                       <Avatar className={classes.av}>
-                        <CheckCircleOutlineIcon />
+                        <CheckCircleIcon />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText classes={{primary:classes.listItemText}}  primary="Questionario AML"  />
@@ -177,7 +180,7 @@ const Practice = () => {
                   <ListItem>
                     <ListItemAvatar>
                       <Avatar className={classes.av}>
-                        <CheckCircleIcon />
+                        <CheckCircleOutlineIcon />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText classes={{primary:classes.listItemText}} 

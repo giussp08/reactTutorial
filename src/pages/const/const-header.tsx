@@ -1,7 +1,3 @@
-import { useHistory } from "react-router";
-import "../../shared/styles/Hand.css";
-
-
 
 const columns = [
   {

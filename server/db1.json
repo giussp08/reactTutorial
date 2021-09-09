@@ -28,5 +28,174 @@
       "lastEditDateTo": "01/05/2021",
       "practiceStartDate": "01/06/2021"
     }
-]
+  ],
+  "companyData": [
+    {
+      "legalInformation": [
+        {
+          "taxCode": "1",
+          "vatNumber": "1",
+          "reaCode": "1",
+          "pec": "pec1",
+          "ndg": "ndg1",
+          "businessName": "Business Name1",
+          "legalForm": "Legal Form1",
+          "establishmentDate": "01/10/2010"
+        },
+        {
+          "taxCode": "2",
+          "vatNumber": "2",
+          "reaCode": "2",
+          "pec": "pec2",
+          "ndg": "ndg2",
+          "businessName": "Business Name2",
+          "legalForm": "Legal Form2",
+          "establishmentDate": "01/10/2011"
+        }
+      ],
+      "registeredOffice": [
+        {
+          "country": "Nazione1",
+          "district": "Provincia1",
+          "city": "comune1",
+          "address": "Indirizzo1",
+          "streetNumber": "Numero civico1",
+          "cap": "cap1"
+        },
+        {
+          "country": "Nazione2",
+          "district": "Provincia2",
+          "city": "comune2",
+          "address": "Indirizzo2",
+          "streetNumber": "Numero civico2",
+          "cap": "cap2"
+        }
+      ],
+      "adminHeadquarters": [
+        {
+          "country": "Nazione1"
+        },
+        {
+          "country": "Nazione2"
+        }
+      ],
+      "correspondenceAddress": [
+        {
+          "country": "Nazione1",
+          "district": "Provincia1",
+          "city": "comune1",
+          "address": "Indirizzo1",
+          "streetNumber": "Numero civico1",
+          "cap": "cap1"
+        },
+        {
+          "country": "Nazione2",
+          "district": "Provincia2",
+          "city": "comune2",
+          "address": "Indirizzo2",
+          "streetNumber": "Numero civico2",
+          "cap": "cap2"
+        }
+      ]
+    }
+  ],
+  "legalRepresentatives": [
+    {
+      "user": "Giuseppe Notaro",
+      "taxCode": "1",
+      "ndg": "NDG",
+      "telephone": "333333333",
+      "email": "emailGiuseppe",
+      "birthplace": "Luogo di nascita1",
+      "birthdate": "01/10/1990"
+    },
+    {
+      "user": "Giacomo Rossi",
+      "taxCode": "2",
+      "ndg": "NDG",
+      "telephone": "333333334",
+      "email": "emailGiacomo",
+      "birthplace": "Luogo di nascita2",
+      "birthdate": "01/10/1991"
+    }
+  ],
+  "owners":[
+      {
+          "user":"Giuseppe Notaro",
+          "taxResidence1":"Residenza fiscale1",
+          "taxResidence2":"-",
+          "taxResidence3":"-",
+          "taxCode1":"1",
+          "taxCode2":"-",
+          "taxCode3":"-"
+      },{
+        "user":"Giacomo Rossi",
+        "taxResidence1":"Residenza fiscale12",
+        "taxResidence2":"-",
+        "taxResidence3":"-",
+        "taxCode1":"1",
+        "taxCode2":"-",
+        "taxCode3":"-"
+    }
+  ],
+  "documents":[
+      {
+          "companyDoc":[
+              {
+                  "type":"",
+                  "name":"companyDoc1",
+                  "user":"Giuseppe Notaro",
+                  "date":"01/01/2020"
+              },
+              {
+                "type":"",
+                "name":"comapnyDoc2",
+                "user":"Giacomo Rossi",
+                "date":"01/01/2021"
+            }
+          ],
+          "personDoc":[
+            {
+                "type":"",
+                "name":"doc1",
+                "user":"Giuseppe Notaro",
+                "date":"01/01/2020"
+            },
+            {
+              "type":"",
+              "name":"doc2",
+              "user":"Giacomo Rossi",
+              "date":"01/01/2021"
+          }
+          ]
+      }
+  ],
+  "log":[
+      {
+          "dateLog":"01/01/2021",
+          "time":"01:01:01",
+          "desc":"Desc1"
+      },
+      {
+        "dateLog":"01/01/2020",
+        "time":"02:02:02",
+        "desc":"Desc2"
+    }
+  ],
+  "userData":[
+      {
+          "nome":"Giuseppe",
+          "cognome":"Notaro",
+          "email":"emailGiuseppe",
+          "telephone":"333333333",
+          "taxCode":"1"
+      },
+      {
+        "nome":"Giacomo",
+        "cognome":"Rossi",
+        "email":"emailGiacomo",
+        "telephone":"333333334",
+        "taxCode":"2"
+    }
+  ]
 }

@@ -17,25 +17,24 @@ const Tablee = (props: DataType) => {
   const repo = props.repo;
   let history = useHistory();
   const handleClick = (code: any) => {
-    console.log(code);
-    /* history.push({
+    console.log(code);history.push({
       pathname: "/practice",
       state: code,
-    }); */
+    });
   };
+
 
   if (repo.length === 0) {
     return <div>Risultati:0</div>;
   } else {
     return (
-      <div style={{ marginLeft: "10%", marginRight: "14%" }}>
+      <div style={{ marginLeft: "10%", marginRight: "14%" ,marginTop:"1%"}}>
         <DataTable
           columns={columns}
           data={repo}
           onRowClicked={(row, ev) => handleClick(row.practiceCode)}
           highlightOnHover
           pointerOnHover
-          actions
         />
       </div>
     );

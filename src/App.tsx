@@ -20,6 +20,7 @@ import Page6 from "./pages/Page6";
 import GetPersonDataDetail from "./pages/personDataDetail/GetPersonDataDetail";
 import GetPerson from "./pages/person/GetPerson";
 import GetCv from "./pages/cv/GetCv";
+import Practice from "./pages/projectPage/practice/Practice";
 
 
 export default function App() {
@@ -65,6 +66,9 @@ return (
             </Route>
           <Route exact path="/cv">
             <GetCv />
+          </Route>
+          <Route exact path="/practice">
+            <Practice />
           </Route>
           <Route exact path="/page5">
             <Page5 />

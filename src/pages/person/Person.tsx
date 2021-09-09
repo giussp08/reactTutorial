@@ -67,7 +67,7 @@ function Person(props:DataType) {
                       <td className="border-center">{rep.surname + " "}</td>
                       <td className="border-center">{rep.gender + " "}</td>
                       <td className="border-center">{rep.degree + " "}</td>
-                      <td className="center">{rep.taxCode + " "}</td>
+                      <td className="center" >{rep.taxCode + " "}</td>
                     </tr>
                   </div>
                 </Col>

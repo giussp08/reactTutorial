@@ -119,83 +119,84 @@
       "birthdate": "01/10/1991"
     }
   ],
-  "owners":[
-      {
-          "user":"Giuseppe Notaro",
-          "taxResidence1":"Residenza fiscale1",
-          "taxResidence2":"-",
-          "taxResidence3":"-",
-          "taxCode1":"1",
-          "taxCode2":"-",
-          "taxCode3":"-"
-      },{
-        "user":"Giacomo Rossi",
-        "taxResidence1":"Residenza fiscale12",
-        "taxResidence2":"-",
-        "taxResidence3":"-",
-        "taxCode1":"1",
-        "taxCode2":"-",
-        "taxCode3":"-"
+  "owners": [
+    {
+      "user": "Giuseppe Notaro",
+      "taxResidence1": "Residenza fiscale1",
+      "taxResidence2": "-",
+      "taxResidence3": "-",
+      "taxCode1": "1",
+      "taxCode2": "-",
+      "taxCode3": "-"
+    },
+    {
+      "user": "Giacomo Rossi",
+      "taxResidence1": "Residenza fiscale12",
+      "taxResidence2": "-",
+      "taxResidence3": "-",
+      "taxCode1": "1",
+      "taxCode2": "-",
+      "taxCode3": "-"
     }
   ],
-  "documents":[
-      {
-          "companyDoc":[
-              {
-                  "type":"",
-                  "name":"companyDoc1",
-                  "user":"Giuseppe Notaro",
-                  "date":"01/01/2020"
-              },
-              {
-                "type":"",
-                "name":"comapnyDoc2",
-                "user":"Giacomo Rossi",
-                "date":"01/01/2021"
-            }
-          ],
-          "personDoc":[
-            {
-                "type":"",
-                "name":"doc1",
-                "user":"Giuseppe Notaro",
-                "date":"01/01/2020"
-            },
-            {
-              "type":"",
-              "name":"doc2",
-              "user":"Giacomo Rossi",
-              "date":"01/01/2021"
-          }
-          ]
-      }
-  ],
-  "log":[
-      {
-          "dateLog":"01/01/2021",
-          "time":"01:01:01",
-          "desc":"Desc1"
-      },
-      {
-        "dateLog":"01/01/2020",
-        "time":"02:02:02",
-        "desc":"Desc2"
+  "documents": [
+    {
+      "companyDoc": [
+        {
+          "type": "",
+          "name": "companyDoc1",
+          "user": "Giuseppe Notaro",
+          "date": "01/01/2020"
+        },
+        {
+          "type": "",
+          "name": "comapnyDoc2",
+          "user": "Giacomo Rossi",
+          "date": "01/01/2021"
+        }
+      ],
+      "personDoc": [
+        {
+          "type": "",
+          "name": "doc1",
+          "user": "Giuseppe Notaro",
+          "date": "01/01/2020"
+        },
+        {
+          "type": "",
+          "name": "doc2",
+          "user": "Giacomo Rossi",
+          "date": "01/01/2021"
+        }
+      ]
     }
   ],
-  "userData":[
-      {
-          "nome":"Giuseppe",
-          "cognome":"Notaro",
-          "email":"emailGiuseppe",
-          "telephone":"333333333",
-          "taxCode":"1"
-      },
-      {
-        "nome":"Giacomo",
-        "cognome":"Rossi",
-        "email":"emailGiacomo",
-        "telephone":"333333334",
-        "taxCode":"2"
+  "log": [
+    {
+      "dateLog": "01/01/2021",
+      "time": "01:01:01",
+      "desc": "Desc1"
+    },
+    {
+      "dateLog": "01/01/2020",
+      "time": "02:02:02",
+      "desc": "Desc2"
+    }
+  ],
+  "userData": [
+    {
+      "cognome": "Notaro",
+      "email": "emailGiuseppe",
+      "nome": "Giuseppe",
+      "taxCode": "1",
+      "telephone": "333333333"
+    },
+    {
+      "cognome": "Rossi",
+      "email": "emailGiacomo",
+      "nome": "Giacomo",
+      "taxCode": "2",
+      "telephone": "333333334"
     }
   ]
 }

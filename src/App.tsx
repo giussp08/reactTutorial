@@ -21,6 +21,7 @@ import GetPersonDataDetail from "./pages/personDataDetail/GetPersonDataDetail";
 import GetPerson from "./pages/person/GetPerson";
 import GetCv from "./pages/cv/GetCv";
 import Practice from "./pages/projectPage/practice/Practice";
+import TabPanel from "./pages/projectPage/practice/component/TabPanel";
 
 
 export default function App() {
@@ -70,6 +71,7 @@ return (
           <Route exact path="/practice">
             <Practice />
           </Route>
+     
           <Route exact path="/page5">
             <Page5 />
           </Route>

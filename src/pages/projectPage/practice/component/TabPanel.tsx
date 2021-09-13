@@ -6,6 +6,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import CompanyData from "./panel/CompanyData";
+import { useLocation } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -13,8 +15,12 @@ interface TabPanelProps {
   value: any;
 }
 
-function TabPanel(props: TabPanelProps) {
+
+const TabPanel=(loc:any ,props: TabPanelProps )=> {
   const { children, value, index, ...other } = props;
+  const location = useLocation();
+
+  console.log(location.state);
 
   return (
     <div
@@ -26,7 +32,7 @@ function TabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <Typography component="div">{children}</Typography>
         </Box>
       )}
     </div>
@@ -69,10 +75,14 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0} >
-        <CompanyData/>
+        <div>
+        <Button > Scarica</Button>
+        {console.log("ciao")}
+        <CompanyData />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <CompanyData/>
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three

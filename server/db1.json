@@ -1,6 +1,7 @@
 {
   "practice": [
     {
+      "id":"1",
       "practiceCode": "1",
       "companyTaxCode": "1",
       "businessName": "BusinessName",
@@ -15,6 +16,7 @@
       "practiceStartDate": "01/01/2021"
     },
     {
+      "id":"2",
       "practiceCode": "2",
       "companyTaxCode": "2",
       "businessName": "BusinessName",
@@ -33,6 +35,7 @@
     {
       "legalInformation": [
         {
+          "id":"1",
           "taxCode": "1",
           "vatNumber": "1",
           "reaCode": "1",
@@ -43,6 +46,7 @@
           "establishmentDate": "01/10/2010"
         },
         {
+          "id":"2",
           "taxCode": "2",
           "vatNumber": "2",
           "reaCode": "2",
@@ -55,6 +59,7 @@
       ],
       "registeredOffice": [
         {
+          "id":"1",
           "country": "Nazione1",
           "district": "Provincia1",
           "city": "comune1",
@@ -63,6 +68,7 @@
           "cap": "cap1"
         },
         {
+          "id":"2",
           "country": "Nazione2",
           "district": "Provincia2",
           "city": "comune2",
@@ -73,14 +79,17 @@
       ],
       "adminHeadquarters": [
         {
+          "id":"1",
           "country": "Nazione1"
         },
         {
+          "id":"2",
           "country": "Nazione2"
         }
       ],
       "correspondenceAddress": [
         {
+          "id":"1",
           "country": "Nazione1",
           "district": "Provincia1",
           "city": "comune1",
@@ -89,6 +98,7 @@
           "cap": "cap1"
         },
         {
+          "id":"2",
           "country": "Nazione2",
           "district": "Provincia2",
           "city": "comune2",
@@ -101,6 +111,7 @@
   ],
   "legalRepresentatives": [
     {
+      "id":"1",
       "user": "Giuseppe Notaro",
       "taxCode": "1",
       "ndg": "NDG",
@@ -110,6 +121,7 @@
       "birthdate": "01/10/1990"
     },
     {
+      "id":"2",
       "user": "Giacomo Rossi",
       "taxCode": "2",
       "ndg": "NDG",
@@ -121,6 +133,7 @@
   ],
   "owners": [
     {
+      "id":"1",
       "user": "Giuseppe Notaro",
       "taxResidence1": "Residenza fiscale1",
       "taxResidence2": "-",
@@ -130,6 +143,7 @@
       "taxCode3": "-"
     },
     {
+      "id":"2",
       "user": "Giacomo Rossi",
       "taxResidence1": "Residenza fiscale12",
       "taxResidence2": "-",
@@ -143,12 +157,14 @@
     {
       "companyDoc": [
         {
+          "id":"1",
           "type": "",
           "name": "companyDoc1",
           "user": "Giuseppe Notaro",
           "date": "01/01/2020"
         },
         {
+          "id":"2",
           "type": "",
           "name": "comapnyDoc2",
           "user": "Giacomo Rossi",
@@ -157,12 +173,14 @@
       ],
       "personDoc": [
         {
+          "id":"1",
           "type": "",
           "name": "doc1",
           "user": "Giuseppe Notaro",
           "date": "01/01/2020"
         },
         {
+          "id":"2",
           "type": "",
           "name": "doc2",
           "user": "Giacomo Rossi",
@@ -173,11 +191,13 @@
   ],
   "log": [
     {
+      "id":"1",
       "dateLog": "01/01/2021",
       "time": "01:01:01",
       "desc": "Desc1"
     },
     {
+      "id":"2",
       "dateLog": "01/01/2020",
       "time": "02:02:02",
       "desc": "Desc2"
@@ -185,6 +205,7 @@
   ],
   "userData": [
     {
+      "id":"1",
       "cognome": "Notaro",
       "email": "emailGiuseppe",
       "nome": "Giuseppe",
@@ -192,6 +213,7 @@
       "telephone": "333333333"
     },
     {
+      "id":"2",
       "cognome": "Rossi",
       "email": "emailGiacomo",
       "nome": "Giacomo",

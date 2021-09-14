@@ -18,7 +18,7 @@ const constLegalInfo=[
     name:"Pec",
     accessor:"pec"
 },{
-    name:"Nad azienda",
+    name:"Ndg azienda",
     accessor:"ndg"
 },{
     name:"Ragione sociale",

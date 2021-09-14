@@ -1,4 +1,5 @@
 export type TLegalInfo = {
+  id:string;
   taxCode: string;
   vatNumber: string;
   reaCode: string;

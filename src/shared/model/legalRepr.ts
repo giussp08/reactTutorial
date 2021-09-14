@@ -1,4 +1,5 @@
 export type TLegalRepr = {
+  id:string;
   user: string;
   taxCode: string;
   ndg: string;

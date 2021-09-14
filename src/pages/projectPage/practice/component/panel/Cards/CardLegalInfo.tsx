@@ -3,6 +3,8 @@ import { Card, Col, Row } from "react-bootstrap";
 import { TLegalInfo } from "../../../../../../shared/model/legalInformation";
 import { makeStyles } from "@material-ui/core/styles";
 import constLegalInfo from "../../../../../../pages/const/const-legalInfo";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
       alignItems: "flex-start", // if you want to fill rows left to right
     },
     item: {
-      fontSize: "9px",
+      fontSize: "8px",
       lineHeight: "0em",
       textTransform: "uppercase",
       whiteSpace:'nowrap'
@@ -36,23 +38,43 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: "20",
     },
     itemRight: {
-      fontSize: "9px",
+      fontSize: "8px",
       lineHeight: "0em",
       whiteSpace:'nowrap',
       textAlign:'right'
     }
   }));
 
-const CardLegalInfo = () => {
-    const classes = useStyles();
+  export type Data ={
+    id:string;
+  }
 
+const CardLegalInfo = (props:Data) => {
+    const classes = useStyles();
+    const [repo,setRepo] = useState([]);
+    const id=props.id;
+
+    useEffect(() => {
+      const getRepo = async () => {
+        try {
+          const response = await axios.get("http://localhost:3000/legalInformation");
+          const myRepo = response.data;
+          setRepo(myRepo);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      getRepo();
+    }, []);
+
+    const myRepo : TLegalInfo[] = repo;
       
   return (
     <div>
         <Grid>
       <Card style={{ border: "2px solid " }}>
         <Card.Body>
-          <Card.Title>INFORMAZIONI LEGALI</Card.Title>
+          <Card.Title style={{fontSize:"14px"}}>INFORMAZIONI LEGALI</Card.Title>
           <Card.Text>
             <Row>
               <Col>
@@ -61,7 +83,7 @@ const CardLegalInfo = () => {
                       console.log(c)
                     if (
                       c.name === "Codice fiscale" ||
-                      c.name === "Partitva iva" ||
+                      c.name === "Partita iva" ||
                       c.name === "Codice rea"||
                       c.name === "Pec" 
                     ) {
@@ -77,34 +99,41 @@ const CardLegalInfo = () => {
                   })}
                 </List>
               </Col>
-             {/* {myRepo.map((r, i) => {
-                if (r.taxCode === tax) {
+              {myRepo.map((r, i) => {
+                console.log(r);
+                if (r.id === id) {
                   return (
                     <Col>
                       <List>
                         <ListItem className={classes.line}>
                           <ListItemText
                             classes={{ primary: classes.itemRight }}
-                            primary={r.cognome}
+                            primary={r.taxCode}
                           ></ListItemText>
                         </ListItem>
                         <ListItem className={classes.line}>
                           <ListItemText
                             classes={{ primary: classes.itemRight }}
-                            primary={r.email}
+                            primary={r.vatNumber}
                           ></ListItemText>
                         </ListItem>
                         <ListItem className={classes.line}>
                           <ListItemText
                             classes={{ primary: classes.itemRight }}
-                            primary={r.nome}
+                            primary={r.reaCode}
+                          ></ListItemText>
+                        </ListItem>
+                        <ListItem className={classes.line}>
+                          <ListItemText
+                            classes={{ primary: classes.itemRight }}
+                            primary={r.pec}
                           ></ListItemText>
                         </ListItem>
                       </List>
                     </Col>
                   );
                 }
-              })} */}
+              })} 
               <Col>
                 <List>
                   {constLegalInfo.map((c, i) => {
@@ -121,28 +150,41 @@ const CardLegalInfo = () => {
                   })}
                 </List>
               </Col>
-          {/*    {myRepo.map((r, i) => {
-                if (r.taxCode === tax) {
+              {myRepo.map((r, i) => {
+                if (r.id === id) {
+                  console.log(r.id);
                   return (
                     <Col>
-                      <List style={{ marginBottom: "52%" }}>
+                      <List>
                         <ListItem className={classes.line}>
                           <ListItemText
                             classes={{ primary: classes.itemRight }}
-                            primary={r.taxCode}
+                            primary={r.ndg}
                           ></ListItemText>
                         </ListItem>
                         <ListItem className={classes.line}>
                           <ListItemText
                             classes={{ primary: classes.itemRight }}
-                            primary={r.telephone}
+                            primary={r.businessName}
+                          ></ListItemText>
+                        </ListItem>
+                        <ListItem className={classes.line}>
+                          <ListItemText
+                            classes={{ primary: classes.itemRight }}
+                            primary={r.legalForm}
+                          ></ListItemText>
+                        </ListItem>
+                        <ListItem className={classes.line}>
+                          <ListItemText
+                            classes={{ primary: classes.itemRight }}
+                            primary={r.establishmentDate}
                           ></ListItemText>
                         </ListItem>
                       </List>
                     </Col>
                   );
                 }
-              })}*/}
+              })}
             </Row>
           </Card.Text>
         </Card.Body>

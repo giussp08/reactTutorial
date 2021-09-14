@@ -4,21 +4,26 @@ import CardAdminHead from "./Cards/CardAdminHead";
 import CardCorrAddress from "./Cards/CardCorrAddress";
 import CardRegOff from "./Cards/CardRegOff";
 
-const CompanyData = () =>{
+export type Data={
+    id:string;
+}
+
+const CompanyData = (props:Data) =>{
+    const id = props.id;
     return(
-        <div style={{marginLeft:"19%"}}>
+        <div >
             {console.log("ciao")}
             <Row>
-                <CardLegalInfo/>
+                <CardLegalInfo id={id}/>
             </Row>
-            <Row>
-                <CardRegOff/>
+            <Row style={{paddingTop:"2%"}}>
+                <CardRegOff id={id}/>
             </Row>
-            <Row>
-                <CardAdminHead/>
+            <Row style={{paddingTop:"2%"}}>
+                <CardAdminHead id={id}/>
             </Row>
-            <Row>
-                <CardCorrAddress/>
+            <Row style={{paddingTop:"2%"}}>
+                <CardCorrAddress id={id}/>
             </Row>
         </div>
     )

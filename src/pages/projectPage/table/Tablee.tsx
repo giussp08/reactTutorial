@@ -5,9 +5,7 @@ import "./Tablee.css";
 import "../../../shared/styles/Hand.css";
 import DataTable from "react-data-table-component";
 import columns from "../../const/const-header";
-import { useRowSelect } from "react-table";
 import { useHistory } from "react-router";
-import { Row } from "react-bootstrap";
 
 export type DataType = {
   repo: TPractice[];

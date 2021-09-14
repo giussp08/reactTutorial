@@ -1,4 +1,5 @@
 export type TOwner = {
+  id:string;
   user: string;
   taxResidence1: string;
   taxResidence2: string;

@@ -2,7 +2,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router-dom";
 import "./Practice.css";
 import RowCard from "./component/RowCard";
-import TabPanel from "./component/TabPanel";
+import SimpleTabs from "./component/TabPanel";
 import PracticeDetailHeader from "./component/PracticeDetailHeader"
 import { useState } from "react";
 
@@ -10,10 +10,8 @@ import { useState } from "react";
 
 const Practice = () => {
   const location = useLocation();
-  let history = useHistory();
-  const [user, setUser] = useState(null);
  
-const loc=location.state;
+
   return (
     <div>
       <Row style={{ marginLeft: "19%", marginTop: "3%" }}>
@@ -36,8 +34,7 @@ const loc=location.state;
         </Col>
       </Row>
       <RowCard loc={location.state} />
-      
-      <TabPanel />
+      <SimpleTabs loc={location.state} />
     </div>
   );
 };

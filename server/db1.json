@@ -149,8 +149,6 @@
       "taxCode3": "-"
     }
   ],
-  "documents": [
-    {
       "companyDoc": [
         {
           "id":"1",
@@ -182,9 +180,7 @@
           "user": "Giacomo Rossi",
           "date": "01/01/2021"
         }
-      ]
-    }
-  ],
+      ],
   "log": [
     {
       "id":"1",

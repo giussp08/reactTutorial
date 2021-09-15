@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { TLegalRepr } from "../../../../../shared/model/legalRepr";
-import columns from "../../../../const/const-repres";
+import { TDoc } from "../../../../../shared/model/doc";
+import columns from "../../../../const/const-doc";
 import DataTable from "react-data-table-component";
 
 export type Data = {
   id: string;
 };
 
-const LegalRepresentatives = (props: Data) => {
+const DocCompany = (props: Data) => {
   const id = props.id;
   const [repo, setRepo] = useState([]);
 
@@ -16,7 +16,7 @@ const LegalRepresentatives = (props: Data) => {
     const getRepo = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/legalRepresentatives"
+          "http://localhost:3000/companyDoc"
         );
         const myRepo = response.data;
         setRepo(myRepo);
@@ -27,8 +27,8 @@ const LegalRepresentatives = (props: Data) => {
     getRepo();
   }, []);
 
-  const myRepo: TLegalRepr[] = repo;
-  let c: TLegalRepr[] = [];
+  const myRepo: TDoc[] = repo;
+  let c: TDoc[] = [];
 
   const myNewTheme= {
     headCells: {
@@ -57,4 +57,4 @@ const LegalRepresentatives = (props: Data) => {
     </div>
   );
 };
-export default LegalRepresentatives;
+export default DocCompany;

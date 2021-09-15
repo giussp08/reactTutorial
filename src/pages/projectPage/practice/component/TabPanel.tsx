@@ -7,8 +7,12 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import CompanyData from "./panel/CompanyData";
 import LegalRepresentetives from "./panel/LegalRepresentatives";
+import Owners from "./panel/Owners";
+import Log from "./panel/Log";
+import PanelDoc from "./panel/PanelDoc";
 import axios from "axios";
 import { TPractice } from "../../../../shared/model/practice";
+import { Button, Col, Row } from "react-bootstrap";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -50,8 +54,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: "white",
     color: "black",
     boxShadow: "none",
-    fontSize: "10px",
-  },
+    fontSize: "10px"
+  }
 }));
 
 export default function SimpleTabs(props: Data) {
@@ -87,7 +91,7 @@ export default function SimpleTabs(props: Data) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.tabs}>
+      <AppBar position="static"className={classes.tabs} >
         <Tabs value={value} onChange={handleChange}>
           <Tab
             style={{ width: "10%", fontSize: "100%" }}
@@ -106,19 +110,33 @@ export default function SimpleTabs(props: Data) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
+      <Row style={{paddingLeft:"650px"}}>
+          <Button variant="outline-primary" style={{width:"100px",height:"40px",fontSize:"12px",border:"0px"}}> Scarica dati </Button>
+        </Row>
         <CompanyData id={cId} />
       </TabPanel>
       <TabPanel value={value} index={1}>
+      <Row style={{paddingLeft:"650px"}}>
+          <Button variant="outline-primary" style={{width:"100px",height:"40px",fontSize:"12px",border:"0px"}}> Scarica dati </Button>
+        </Row>
         <LegalRepresentetives id={cId} />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+      <Row style={{paddingLeft:"650px"}}>
+          <Button variant="outline-primary" style={{width:"100px",height:"40px",fontSize:"12px",border:"0px"}}> Scarica dati </Button>
+        </Row>
+        <Owners id={cId}/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Three
+      <Row >
+        <PanelDoc id={cId}/>
+        </Row>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Three
+      <Row style={{paddingLeft:"650px"}}>
+          <Button variant="outline-primary" style={{width:"100px",height:"40px",fontSize:"12px",border:"0px"}}> Scarica dati </Button>
+        </Row>
+        <Log id={cId}/>
       </TabPanel>
     </div>
   );

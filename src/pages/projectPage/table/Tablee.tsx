@@ -21,6 +21,8 @@ const Tablee = (props: DataType) => {
     });
   };
 
+  
+
 
   if (repo.length === 0) {
     return <div>Risultati:0</div>;

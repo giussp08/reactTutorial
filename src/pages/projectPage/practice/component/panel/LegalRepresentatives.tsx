@@ -36,7 +36,8 @@ const LegalRepresentatives = (props: Data) => {
             textTransform:"uppercase",
             fontSize:"9px",
             backgroundColor:"whitesmoke",
-            height:"40px",marginTop:"2%"
+            height:"40px",marginTop:"2%",
+            fontWeight:"bold"
         }
     },
     rows:{

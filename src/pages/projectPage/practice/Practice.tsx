@@ -1,10 +1,9 @@
-import { Card, Col, Row } from "react-bootstrap";
-import { useHistory, useLocation } from "react-router-dom";
+import { Col, Row } from "react-bootstrap";
+import {useLocation } from "react-router-dom";
 import "./Practice.css";
 import RowCard from "./component/RowCard";
 import SimpleTabs from "./component/TabPanel";
 import PracticeDetailHeader from "./component/PracticeDetailHeader"
-import { useState } from "react";
 
 
 

@@ -36,7 +36,8 @@ const DocCompany = (props: Data) => {
             textTransform:"uppercase",
             fontSize:"9px",
             backgroundColor:"whitesmoke",
-            height:"40px",marginTop:"2%"
+            height:"40px",marginTop:"2%",
+            fontWeight:"bold"
         }
     },
     rows:{
@@ -45,7 +46,12 @@ const DocCompany = (props: Data) => {
         }
     }
   }
-
+ /*  const image = document.getElementsByTagName("img")[0];
+  myRepo.map(function(img) {
+    // Here just assigning the single image URL 
+    image.src = img.type;
+  })
+ */
   return (
     <div>
       {myRepo.map((r, i) => {

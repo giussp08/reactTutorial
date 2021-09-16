@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { TAdminHead } from "../../../../../../shared/model/adminHead";
 import constHead from "../../../../../const/const-headquarter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStoreAlt } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -74,7 +76,8 @@ const CardAdminHead = (props:Data)=>{
 <Grid>
       <Card style={{ border: "2px solid " }}>
         <Card.Body>
-          <Card.Title style={{fontSize:"14px"}}>SEDE AMMINISTRATIVA</Card.Title>
+          <Card.Title style={{fontSize:"15px"}}>
+            <FontAwesomeIcon style={{width:"7%"}} icon={faStoreAlt}/> SEDE AMMINISTRATIVA</Card.Title>
           <Card.Text>
             <Row>
               <Col>

@@ -5,6 +5,8 @@ import { TAddress } from "../../../../../../shared/model/address";
 import constAddress from "../../../../../../pages/const/const-address";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBuilding } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -74,7 +76,8 @@ const CardRegOff = (props:Data)=>{
 <Grid>
       <Card style={{ border: "2px solid " }}>
         <Card.Body>
-          <Card.Title style={{fontSize:"14px"}}>SEDE LEGALE</Card.Title>
+          <Card.Title style={{fontSize:"15px"}}>
+            <FontAwesomeIcon style={{width:"7%"}} icon={faBuilding}/> SEDE LEGALE</Card.Title>
           <Card.Text>
             <Row>
               <Col>

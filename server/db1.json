@@ -152,14 +152,14 @@
       "companyDoc": [
         {
           "id":"1",
-          "type": "",
+          "type": "../src/img/avatar.png",
           "name": "companyDoc1",
           "user": "Giuseppe Notaro",
           "date": "01/01/2020"
         },
         {
           "id":"2",
-          "type": "",
+          "type": "../src/img/avatar.png",
           "name": "comapnyDoc2",
           "user": "Giacomo Rossi",
           "date": "01/01/2021"

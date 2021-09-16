@@ -15,6 +15,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { TPractice } from "../../../shared/model/practice";
 import Tablee from "../table/Tablee";
+import Result0 from "./Result0";
 
 function Project() {
   const location = useLocation();
@@ -369,7 +370,7 @@ function Project() {
                   }
                 })}
                 <p style={{ fontSize: "12px" }}>
-                  {click == false ? "Risultati:0" : <Tablee repo={array} />}
+                  {click == false ? <Result0/> : <Tablee repo={array} />}
                 </p>
               </Col>
             </Row>

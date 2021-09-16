@@ -6,6 +6,7 @@ import "../../../shared/styles/Hand.css";
 import DataTable from "react-data-table-component";
 import columns from "../../const/const-header";
 import { useHistory } from "react-router";
+import Result0 from "../search/Result0";
 
 export type DataType = {
   repo: TPractice[];
@@ -25,7 +26,7 @@ const Tablee = (props: DataType) => {
 
 
   if (repo.length === 0) {
-    return <div>Risultati:0</div>;
+    return <div><Result0/></div>;
   } else {
     return (
       <div style={{ marginLeft: "10%", marginRight: "14%" ,marginTop:"1%"}}>

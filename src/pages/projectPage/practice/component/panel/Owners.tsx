@@ -36,6 +36,7 @@ const Owners = (props: Data) => {
         backgroundColor: "whitesmoke",
         height: "40px",
         marginTop: "2%",
+        fontWeight:"bold"
       },
     },
     rows: {

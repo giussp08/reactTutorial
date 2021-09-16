@@ -1,4 +1,4 @@
-import { Card, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 import CardLegalInfo from "./Cards/CardLegalInfo";
 import CardAdminHead from "./Cards/CardAdminHead";
 import CardCorrAddress from "./Cards/CardCorrAddress";
@@ -11,8 +11,7 @@ export type Data={
 const CompanyData = (props:Data) =>{
     const id = props.id;
     return(
-        <div >
-            {console.log("ciao")}
+        <div>
             <Row>
                 <CardLegalInfo id={id}/>
             </Row>

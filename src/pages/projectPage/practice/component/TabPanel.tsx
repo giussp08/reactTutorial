@@ -94,19 +94,19 @@ export default function SimpleTabs(props: Data) {
       <AppBar position="static"className={classes.tabs} >
         <Tabs value={value} onChange={handleChange}>
           <Tab
-            style={{ width: "10%", fontSize: "100%" }}
+            style={{ width: "10%", fontSize: "99%" , fontWeight:"bold"}}
             label="DATI AZIENDA"
           />
           <Tab
-            style={{ width: "10%", fontSize: "100%" }}
+            style={{ width: "10%", fontSize: "99%", fontWeight:"bold" }}
             label="LEGALI RAPPRESENTANTI"
           />
           <Tab
-            style={{ width: "10%", fontSize: "100%" }}
+            style={{ width: "10%", fontSize: "99%" , fontWeight:"bold"}}
             label="TITOLARI EFFETTIVI"
           />
-          <Tab style={{ width: "10%", fontSize: "100%" }} label="DOCUMENTI" />
-          <Tab style={{ width: "10%", fontSize: "100%" }} label="LOG PRATICA" />
+          <Tab style={{ width: "10%", fontSize: "99%" , fontWeight:"bold"}} label="DOCUMENTI" />
+          <Tab style={{ width: "10%", fontSize: "99%" , fontWeight:"bold"}} label="LOG PRATICA" />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

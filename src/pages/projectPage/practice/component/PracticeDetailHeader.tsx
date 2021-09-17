@@ -4,6 +4,7 @@ import axios from "axios";
 import { TPractice } from "../../../../shared/model/practice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import columns from "../../../const/const-header";
+import "../../practice/Practice.css"
 
 export type Data={
     loc:unknown;
@@ -36,36 +37,37 @@ const PracticeDetailHeader = (props:Data) =>{
           >
             <FontAwesomeIcon
               className="center"
-              style={{ width: "15%", height: "15%" }}
+              /* style={{ width: "100%", height: "15%" }} */
+              size="3x"
               icon={faFileInvoiceDollar}
             />
             <th
               className="border-center"
-              style={{ fontSize: "12px", textTransform: "uppercase" }}
+              style={{ fontSize: "12px", textTransform: "uppercase" ,paddingRight:"25px"}}
             >
               {columns[7].name + " "}
             </th>
             <th
               className="border-center"
-              style={{ fontSize: "12px", textTransform: "uppercase" }}
+              style={{ fontSize: "12px", textTransform: "uppercase" ,paddingRight:"25px"}}
             >
               {columns[10].name + " "}
             </th>
             <th
               className="border-center"
-              style={{ fontSize: "12px", textTransform: "uppercase" }}
+              style={{ fontSize: "12px", textTransform: "uppercase",paddingRight:"25px" }}
             >
               {columns[11].name + " "}
             </th>
             <th
               className="border-center"
-              style={{ fontSize: "12px", textTransform: "uppercase" }}
+              style={{ fontSize: "12px", textTransform: "uppercase",paddingRight:"25px" }}
             >
               {columns[8].name + " "}
             </th>
             <th
               className="center"
-              style={{ fontSize: "12px", textTransform: "uppercase" }}
+              style={{ fontSize: "12px", textTransform: "uppercase" ,paddingRight:"25px"}}
             >
               {columns[0].name + " "}
             </th>
@@ -75,19 +77,19 @@ const PracticeDetailHeader = (props:Data) =>{
                 return (
                   <tr key={i}>
                     <td className="center"> </td>
-                    <td className="border-center" style={{ fontSize: "12px" }}>
+                    <td className="border-center" style={{ fontSize: "12px",paddingRight:"25px" }}>
                       {r.step + " "}
                     </td>
-                    <td className="border-center" style={{ fontSize: "12px" }}>
+                    <td className="border-center" style={{ fontSize: "12px",paddingRight:"25px" }}>
                       {r.lastEditDateTo + " "}
                     </td>
-                    <td className="border-center" style={{ fontSize: "12px" }}>
+                    <td className="border-center" style={{ fontSize: "12px" ,paddingRight:"25px"}}>
                       {r.practiceStartDate + " "}
                     </td>
-                    <td className="border-center" style={{ fontSize: "12px" }}>
+                    <td className="border-center" style={{ fontSize: "12px" ,paddingRight:"25px"}}>
                       {r.package + " "}
                     </td>
-                    <td className="center" style={{ fontSize: "12px" }}>
+                    <td className="center" style={{ fontSize: "12px" ,paddingRight:"25px"}}>
                       {r.companyTaxCode + " "}
                     </td>
                   </tr>

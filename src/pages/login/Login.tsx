@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import {THeader} from "../../shared/model/header";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import NavBar from "../../components/NavBar";
 
 function Login() {
 
@@ -60,6 +61,7 @@ function Login() {
 
   return (
     <div className="Login ">
+      <NavBar />
       <Form.Label>Login for Form 1</Form.Label>
       <br></br>
       <Row>
